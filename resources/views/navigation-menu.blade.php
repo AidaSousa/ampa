@@ -6,6 +6,11 @@
             'url' => route('productos'),
             'active' => request()->routeIs('productos')
         ],
+        [
+            'name' => 'Articulos',
+            'url' => route('articulos'),
+            'active' => request()->routeIs('articulos.*')
+        ],
         ];
 @endphp
 
