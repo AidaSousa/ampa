@@ -7,8 +7,9 @@
         <meta name="theme-color" content="#009688">
         <link rel="stylesheet" type="text/css" href="/css/main.temp.css">
 
-        <title>Registro</title>
+        <title>Rexistro</title>
     </head>
+
     <body>
         <section class="material-half-bg">
             <div class="cover"></div>
@@ -26,7 +27,7 @@
                 <form method="POST" action="{{ route('register') }}" class="form-horizontal mx-auto">
                     @csrf
                     <div class="form-group w-75">
-                        <label for="name" value="{{ __('Name') }}" class="col-md-8 mt-3 mx-5 control-label text-center">Nombre y apellidos</label>
+                        <label for="name" value="{{ __('Name') }}" class="col-md-8 mt-3 mx-5 control-label text-center">Nome y Apelido</label>
                         <input id="name" class="form-control mx-5 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     </div>
                     <div class="form-group w-75">
