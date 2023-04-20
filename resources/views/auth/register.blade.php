@@ -7,8 +7,9 @@
         <meta name="theme-color" content="#009688">
         <link rel="stylesheet" type="text/css" href="/css/main.temp.css">
 
-        <title>Registro</title>
+        <title>Rexistro</title>
     </head>
+
     <body>
         <section class="material-half-bg">
             <div class="cover"></div>
