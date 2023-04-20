@@ -106,12 +106,15 @@
 <!-- Product -->
 <section class="sec-product bg0 p-t-100 p-b-50">
 		<div class="container">
+        <div class="p-b-66">
+            <h3 class="ltext-105 cl5 txt-center respon1">
+                ÚLTIMAS ACTIVIDADES
+            </h3>
+        </div>
 			<div class="p-b-32">
-				<h3 class="ltext-105 cl5 txt-center respon1">
-					ÚLTIMAS ACTIVIDADES
-				</h3>
 
 				@include('components.calendar')
+
 			</div>
 
 	<section class="sec-blog bg0 p-t-60 p-b-90 mb-4">

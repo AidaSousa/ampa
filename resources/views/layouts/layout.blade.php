@@ -429,7 +429,7 @@
 				ps.update();
 			})
 		});
-	</script> -->
+	</script>
 
 
 	<script src="{{ asset('js/main.js') }}"></script>
