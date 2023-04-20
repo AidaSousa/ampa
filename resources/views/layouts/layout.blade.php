@@ -92,7 +92,7 @@
 						@auth
 						<li class="active-menu">
 							<a class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition mt-1">
-								{{ Auth::user()->name }}
+								{{ Auth::user()->name_padre_madre }}
 							</a>
 							<ul class="sub-menu">
 								<li><a href="{{ route('user.perfil') }}">Mi perfil</a></li>

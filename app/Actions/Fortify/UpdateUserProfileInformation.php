@@ -18,9 +18,16 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     public function update(User $user, array $input): void
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
+            'name_padre_madre' => ['required', 'string', 'max:255'],
+            'surname_padre_madre' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
+            'dni' => ['string', 'max:255', 'unique:users'],
+            'beca_comedor' => ['in:si,no'],
+            'telefono' => ['string', 'max:255'],
+            'direccion' => ['string', 'max:255'],
+            'colaboracion_ampa' => ['string', 'max:255'],
+            'is_paid' => ['nullable', 'boolean'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
@@ -32,8 +39,15 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
-                'name' => $input['name'],
-                'email' => $input['email'],
+            'name_padre_madre' => $input['name_padre_madre'],
+            'surname_padre_madre' => $input['surname_padre_madre'],
+            'email' => $input['email'],
+            'dni' => $input['dni'],
+            'beca_comedor' => $input['beca_comedor'],
+            'telefono' => $input['telefono'],
+            'direccion' => $input['direccion'],
+            'colaboracion_ampa' => $input['colaboracion_ampa'],
+            'is_paid' => $input['is_paid'] ?? false,
             ])->save();
         }
     }
@@ -46,9 +60,16 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     protected function updateVerifiedUser(User $user, array $input): void
     {
         $user->forceFill([
-            'name' => $input['name'],
+            'name_padre_madre' => $input['name_padre_madre'],
+            'surname_padre_madre' => $input['surname_padre_madre'],
             'email' => $input['email'],
             'email_verified_at' => null,
+            'dni' => $input['dni'],
+            'beca_comedor' => $input['beca_comedor'],
+            'telefono' => $input['telefono'],
+            'direccion' => $input['direccion'],
+            'colaboracion_ampa' => $input['colaboracion_ampa'],
+            'is_paid' => $input['is_paid'],
         ])->save();
 
         $user->sendEmailVerificationNotification();

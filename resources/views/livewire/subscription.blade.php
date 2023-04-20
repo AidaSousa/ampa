@@ -1,4 +1,112 @@
-<div>
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-4 lg:mb-6">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">MOI IMPORTANTE</h2>
+            <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+                Para participar no servizo de comedor e madrugadores, así como nas actividades extraescolares, obradoiros, festas,  organizados pola ANPA ao longo do ano é necesario facerse socio/a a través deste formulario. 
+            </p>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+                Unha vez enviado o formulario recibiredes un correo de confirmación.
+                Para calquera dúbida ou dificultade  podedes enviarnos un correo a <a href="mailto:anpaesanjurjo@gmail.com">anpaesanjurjo@gmail.com</a>
+            </p>
+        </div>
+    <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        <form action="{{ route('associated.store')}}" method="POST">
+            <div class="mb-4">
+                <label for="situacion" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Por favor, indica cal é a vosa situación</label>
+                <select id="situacion" name="situacion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    <option selected="">Seleccione a súa situación</option>
+                    <option value="Alta-nueva">Alta nova</option>
+                    <option value="Renovacion">Renovación</option>
+                    <option value="Modificacion-datos">Modificación de datos</option>
+                </select>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                <div class="sm:col-span-2">
+                    <label for="email_comunicacion_directa" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enderezo electrónico para recibir comunicacións xerais da ANPA (envío de información, avisos etc)</label>
+                    <input type="email" name="email_comunicacion_directa" id="email_comunicacion_directa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                </div>
+                <div class="mb-2">
+                    <label for="beca_comedor" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Sodes solicitantes da beca comedor?</label>
+                    <select id="beca_comedor" name="beca_comedor" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                        <option selected="">Seleccione a súa situación</option>
+                        <option value="si">Si</option>
+                        <option value="no">Non</option>
+                    </select>
+                    <div class="grid gap-4 sm:grid-cols-1 sm:gap-6">
+                        <h4 class="flex-1 text-1xl tracking-tight font-extrabold text-gray-900 dark:text-white mt-4">DATOS NAI/PAI/TITOR/A 1</h4>
+                        <div class="sm:col-span-2">
+                            <label for="name_padre_madre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
+                            <input type="text" name="name_padre_madre" id="name_padre_madre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="surname_padre_madre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apelidos</label>
+                            <input type="text" name="surname_padre_madre" id="surname_padre_madre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="dni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">DNI/NIE</label>
+                            <p class="font-light text-gray-500 sm:text-sm dark:text-gray-400">
+                                DNI o NIE co seguinte formato 12345678X, o X1234567Z  caso do NIE
+                            </p>
+                            <input type="text" name="dni" id="dni" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teléfono</label>
+                            <input type="text" name="telefono" id="telefono" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="direccion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Direción</label>
+                    <textarea id="direccion" name="direccion" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="colaboracion_ampa" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No caso de estar interesado/a en colaborar coa ANPA, qué consideras que podes aportar? En que área te gustaría axudar ? (festas, actividades, comedor, subvencións, horta...)</label>
+                    <textarea id="colaboracion_ampa" name="colaboracion_ampa" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder=></textarea>
+                </div>
+            <div class="flex-1 justify-end">
+                @if(auth()->user()->subscribedToPrice('price_1MyCb0CNGUc1AmzpaqIyPyCb', 'Suscripcion Asociado'))
+
+                @if (auth()->user()->subscription('Suscripcion Asociado')->onGracePeriod())
+
+                    <x-secondary-button  class="justify-center" wire:click="resumeSubscription" wire:target="resumeSubscription" wire:loading.attr="disabled">
+
+                        <x-spinner size="4" wire:target="resumeSubscription" wire:loading />
+
+                        Reanudar
+                    </x-secondary-button>
+
+                @else
+
+                    <x-danger-button wire:click="cancelSubscription" wire:target="cancelSubscription" wire:loading.attr="disabled">
+
+                        <x-spinner size="4" wire:target="cancelSubscription" wire:loading />
+
+                        Cancelar
+
+                    </x-danger-button>
+
+                @endif
+
+            @else
+
+                <x-button type="submit" style="background-color: #009688; color: white;" wire:click="newSubscription('price_1MyCb0CNGUc1AmzpaqIyPyCb')" class="justify-center" wire:target="newSubscription('price_1MyCb0CNGUc1AmzpaqIyPyCb')" wire:loading.attr="disabled">
+
+                    <x-spinner size="4" wire:target="newSubscription('price_1MyCb0CNGUc1AmzpaqIyPyCb')" wire:loading />
+
+                    Facerse socio
+                </x-button>
+
+            @endif
+            </div>
+        </form>
+    </div>
+    </div>
+  </section>
+
+
+
+{{-- <div>
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
@@ -226,7 +334,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 

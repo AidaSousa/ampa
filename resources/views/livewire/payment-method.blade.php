@@ -1,4 +1,4 @@
-<div>
+<div class="py-12">
 
     <section class="bg-white rounded shadow-lg mb-12">
 
@@ -31,8 +31,8 @@
 
             <div class="flex justify-end">
 
-                <x-button id="card-button" data-secret="{{ $intent->client_secret }}">
-                    Actualizar método de pago
+                <x-button style="background-color: #009688; color: white;" id="card-button" data-secret="{{ $intent->client_secret }}">
+                    Agregar método de pago
                 </x-button>
 
             </div>
