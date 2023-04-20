@@ -87,10 +87,9 @@
         </ul>
       </div> -->
       <div>
-        @yield('content')
       </div>
     </main>
-    
+
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -140,10 +139,10 @@
       		label: "No asociados"
       	}
       ]
-      
+
       var ctxl = $("#lineChartDemo").get(0).getContext("2d");
       var lineChart = new Chart(ctxl).Line(data);
-      
+
       var ctxp = $("#pieChartDemo").get(0).getContext("2d");
       var pieChart = new Chart(ctxp).Pie(pdata);
     </script>
