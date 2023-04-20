@@ -72,8 +72,8 @@
 		<div class="wrap-menu-desktop">
 			<nav class="limiter-menu-desktop p-l-45">
 				<!-- Logo desktop -->
-				<a href="{{ url('/') }}" class="logo">
-					<img src="{{ URL::asset('img/anpa (6).svg') }}" alt="IMG-LOGO">
+                <a href="{{ url('/') }}" class="logo">
+					<img src="{{ URL::asset('img/anpa.png') }}" alt="IMG-LOGO">
 				</a>
 
 					<!-- Menu desktop -->
