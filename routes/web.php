@@ -55,6 +55,16 @@ Route::get('/bancolibros', function () {
     return view('forms.banco-libros');
 });
 
+// Vista Aviso legal
+Route::get('/avisoLegal', function () {
+    return view('footer.avisoLegal');
+});
+
+// Vista Politica de Privacidad
+Route::get('/politicaPriv', function () {
+    return view('footer.politicaPrivacidad');
+});
+
 // Route::get('/dash', function () {
 //     return view('user.index', ['user' => app()->make('App\Http\Controllers\UserController')->userIndex()]);
 // })->name('dash');
