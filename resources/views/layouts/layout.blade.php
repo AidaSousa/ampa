@@ -12,8 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-	 
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/material-design-iconic-font.min.css') }}" /> 
+
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/material-design-iconic-font.min.css') }}" />
 
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 
@@ -23,19 +23,19 @@
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/hamburgers.min.css') }}" />
 
-	 <link rel="stylesheet" type="text/css" href="{{ asset('css/animsition.min.css') }}" /> 
+	 <link rel="stylesheet" type="text/css" href="{{ asset('css/animsition.min.css') }}" />
 
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/select2.min.css') }}" />  
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/select2.min.css') }}" />
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-	 <link rel="stylesheet" type="text/css" href="{{ asset('css/daterangepicker.css') }}" /> 
+	 <link rel="stylesheet" type="text/css" href="{{ asset('css/daterangepicker.css') }}" />
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}" />
 
 	 <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}"/>
 
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/perfect-scrollbar.css') }}"/> 
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/perfect-scrollbar.css') }}"/>
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}"/>
@@ -70,8 +70,8 @@
 	<!-- Header desktop -->
 	<div class="container-menu-desktop trans-03">
 		<div class="wrap-menu-desktop">
-			<nav class="limiter-menu-desktop p-l-45">					
-				<!-- Logo desktop -->		
+			<nav class="limiter-menu-desktop p-l-45">
+				<!-- Logo desktop -->
 				<a href="{{ url('/') }}" class="logo">
 					<img src="{{ URL::asset('img/anpa (6).svg') }}" alt="IMG-LOGO">
 				</a>
@@ -111,16 +111,16 @@
        					 @endauth
 
 					</ul>
-				</div>	
+				</div>
 
-				<!-- Icon header 
+				<!-- Icon header
 				<div class="wrap-icon-header flex-w flex-r-m h-full">
 					<div class="flex-c-m h-full p-r-24">
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
 							<i class="zmdi zmdi-search"></i>
-						</div> 
+						</div>
 					</div>-->
-							
+
 			</div>
 			</nav>
 		</div>
@@ -129,7 +129,7 @@
 
 		<!-- Header Mobile -->
 		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->		
+			<!-- Logo moblie -->
 			<div class="logo-mobile">
 				<a href="/"><img src="{{ URL::asset('img/anpa.png') }}" alt="IMG-LOGO"></a>
 			</div>
@@ -180,10 +180,10 @@
        					 </li>
        				 @endauth
 					</ul>
-				
+
 		</div>
 
-		
+
 			<!-- Modal Search -->
 			<!-- <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
@@ -236,11 +236,11 @@
 					</ul>
 				</div>
 
-				
+
 				<div class="col-sm-6 col-lg-3 p-b-50">
 				<ul  class="text-justify">
 				<li class="p-b-10">
-					
+
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
 								COMEDOR
 							</a>
@@ -275,19 +275,19 @@
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<ul text-justify>
 						<li class="p-b-10">
-							<a href="/politica" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
+							<a href="/politicaPriv" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
 								Politica de Privacidad
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="/aviso" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
+							<a href="/avisoLegal" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
 								Aviso legal
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
+							<a href="" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
 								Politica de Cookies
 							</a>
 						</li>
@@ -320,13 +320,13 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 	<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-	
+
 
 	<script src="{{ asset('js/animsition.min.js') }}"></script>
 
 	 <script src="{{ asset('js/popper.js') }}"></script>
 
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script> 
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 	 <script src="{{ asset('js/select2.min.js') }}"></script>
 
@@ -337,11 +337,11 @@
 				dropdownParent: $(this).next('.dropDownSelect2')
 			});
 		})
-	</script> 
+	</script>
 
     <script src="{{ asset('js/moment.min.js') }}"></script>
 
-	<script src="{{ asset('js/daterangepicker.js') }}"></script> 
+	<script src="{{ asset('js/daterangepicker.js') }}"></script>
 
 	<script src="{{ asset('js/slick.min.js') }}"></script>
 	<script src="{{ asset('js/slick-custom.js') }}"></script>
@@ -365,7 +365,7 @@
 		});
 	</script>
 
-	<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script> 
+	<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
 
 	<script src="{{ asset('js/sweetalert.min.js') }}"></script>
 	<script>
@@ -397,7 +397,7 @@
 		});
 	</script>
 
-	<script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script> 
+	<script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
 
 	<script>
 		$('.js-pscroll').each(function(){
@@ -414,7 +414,7 @@
 		});
 	</script>
 
-	
+
 	<script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
 	<script>
 		$('.js-pscroll').each(function() {
