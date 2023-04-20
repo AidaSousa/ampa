@@ -28,11 +28,11 @@
                     @csrf
                     <div class="form-group w-75">
                         <label for="name" class="col-md-8 mt-3 mx-auto control-label text-center">Nombre</label>
-                        <input id="name" class="form-control mx-5 w-full" type="text" name="name_padre_madre" required autofocus autocomplete="name" />
+                        <input id="name" class="form-control mx-5 w-full" type="text" name="name" required autofocus autocomplete="name" />
                     </div>
                     <div class="form-group w-75">
                         <label for="name" class="col-md-8 mt-1 mx-auto control-label text-center">Apellidos</label>
-                        <input id="surname" class="form-control mx-5 w-full" type="text" name="surname_padre_madre"  required autofocus autocomplete="surname" />
+                        <input id="surname" class="form-control mx-5 w-full" type="text" name="surname"  required autofocus autocomplete="surname" />
                     </div>
                     <div class="form-group w-75">
                         <x-label for="email" value="{{ __('Email') }}" class="col-md-8 mt-1 mx-4 control-label text-center" />

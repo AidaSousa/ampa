@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name_padre_madre');
-            $table->string('surname_padre_madre');
+            $table->string('name');
+            $table->string('surname');
             $table->string('email')->unique();
             $table->string('dni')->unique()->nullable();
             $table->enum('beca_comedor', ['si', 'no'])->nullable();

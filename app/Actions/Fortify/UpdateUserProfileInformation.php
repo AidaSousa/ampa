@@ -18,8 +18,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     public function update(User $user, array $input): void
     {
         Validator::make($input, [
-            'name_padre_madre' => ['required', 'string', 'max:255'],
-            'surname_padre_madre' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
             'dni' => ['string', 'max:255', 'unique:users'],
@@ -39,8 +39,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
-            'name_padre_madre' => $input['name_padre_madre'],
-            'surname_padre_madre' => $input['surname_padre_madre'],
+            'name' => $input['name'],
+            'surname' => $input['surname'],
             'email' => $input['email'],
             'dni' => $input['dni'],
             'beca_comedor' => $input['beca_comedor'],
@@ -60,8 +60,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     protected function updateVerifiedUser(User $user, array $input): void
     {
         $user->forceFill([
-            'name_padre_madre' => $input['name_padre_madre'],
-            'surname_padre_madre' => $input['surname_padre_madre'],
+            'name' => $input['name'],
+            'surname' => $input['surname'],
             'email' => $input['email'],
             'email_verified_at' => null,
             'dni' => $input['dni'],

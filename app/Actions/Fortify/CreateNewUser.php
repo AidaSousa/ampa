@@ -20,8 +20,8 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input): User
     {
         Validator::make($input, [
-            'name_padre_madre' => ['required', 'string', 'max:255'],
-            'surname_padre_madre' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'dni' => ['string', 'max:255', 'unique:users'],
             'beca_comedor' => ['in:si,no'],
@@ -34,8 +34,8 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         $user = User::create([
-            'name_padre_madre' => $input['name_padre_madre'],
-            'surname_padre_madre' => $input['surname_padre_madre'],
+            'name' => $input['name'],
+            'surname' => $input['surname'],
             'email' => $input['email'],
             'dni' => $input['dni'],
             'beca_comedor' => $input['beca_comedor'],
