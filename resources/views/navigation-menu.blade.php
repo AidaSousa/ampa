@@ -2,9 +2,19 @@
 
     $links = [
         [
-            'name' => 'Productos',
-            'url' => route('productos'),
-            'active' => request()->routeIs('productos')
+            'name' => 'Inicio',
+            'url' => route('home'),
+            'active' => request()->routeIs('home')
+        ],
+        [
+            'name' => 'Actividades',
+            'url' => route('events.events'),
+            'active' => request()->routeIs('events.*')
+        ],
+        [
+            'name' => 'Blog',
+            'url' => route('blogs.index'),
+            'active' => request()->routeIs('blogs.*')
         ],
         ];
 @endphp
@@ -16,7 +26,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('home') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
@@ -63,8 +73,12 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                <x-dropdown-link href="{{ route('profile.show') }}">
+                                <x-dropdown-link href="{{ route('user.perfil') }}">
                                     {{ __('Profile') }}
+                                </x-dropdown-link>
+
+                                <x-dropdown-link href="{{ route('billings.index') }}">
+                                    Hazte socio
                                 </x-dropdown-link>
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -151,6 +165,10 @@
                     <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                         {{ __('Profile') }}
                     </x-responsive-nav-link>
+
+                    <x-dropdown-link href="{{ route('billings.index') }}">
+                        Hazte socio
+                    </x-dropdown-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                         <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
