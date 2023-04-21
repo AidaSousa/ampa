@@ -55,6 +55,16 @@ Route::get('/bancolibros', function () {
     return view('forms.banco-libros');
 });
 
+// Vista Aviso legal
+Route::get('/avisoLegal', function () {
+    return view('footer.avisoLegal');
+});
+
+// Vista Politica de Privacidad
+Route::get('/politicaPriv', function () {
+    return view('footer.politicaPrivacidad');
+});
+
 // Route::get('/dash', function () {
 //     return view('user.index', ['user' => app()->make('App\Http\Controllers\UserController')->userIndex()]);
 // })->name('dash');
@@ -130,16 +140,16 @@ Route::get('/category-show', [CategoryController::class, 'showCategory'])->name(
 Route::delete('/category-destroy/{id}', [CategoryController::class, 'destroyCategory'])->name('categories.destroy');
 
 //Events
-Route::get('/event-index', [EventController::class, 'indexEvent'])->name('events.index');
+Route::get('/actividades', [EventController::class, 'indexEvent'])->name('events.events');
 Route::get('/event-create', [EventController::class, 'createEvent'])->name('events.create');
 Route::post('/event-store', [EventController::class, 'storeEvent'])->name('events.store');
 Route::get('/event-edit/{id}', [EventController::class, 'editEvent'])->name('events.edit');
 Route::put('/event-update/{id}', [EventController::class, 'updateEvent'])->name('events.update');
 Route::get('/event-show', [EventController::class, 'showEvent'])->name('events.show');
 Route::get('/event-destroy/{id}', [EventController::class, 'destroyEvent'])->name('events.destroy');
-Route::get('/actividades', function () {
-    return view('events.events');
-})->name('events.events');
+Route::get('/index', function () {
+    return view('events.index');
+})->name('events.index');
 
 
 //Event user

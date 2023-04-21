@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Events\UserSubscriptionCreated;
+
 
 class Subscription extends Component
 {
@@ -27,6 +29,9 @@ class Subscription extends Component
 
             auth()->user()->newSubscription('Suscripcion Asociado', $plan)
             ->create($this->defaultPaymentMethod->id);
+
+            $user_id = auth()->user()->id;
+            event(new UserSubscriptionCreated($user_id));
 
             $this->emit('newSubscription');
 

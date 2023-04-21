@@ -63,7 +63,7 @@ class ChildrenController extends Controller
         
         $children->save();
 
-        return redirect()->route('user.profile')->with('success', 'Children updated successfully!!');
+        return redirect()->route('user.perfil')->with('success', 'Children updated successfully!!');
     }
 
     public function destroyChildren($id) {
@@ -75,6 +75,6 @@ class ChildrenController extends Controller
         }
 
         $children->delete();
-        return redirect()->route('user.profile');
+        return redirect()->route('user.perfil');
     }
 }
