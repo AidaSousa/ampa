@@ -210,6 +210,7 @@ Route::get('/calendar', function () {
 
 //stripe(Aida)
 Route::get('/nuevo-socio', [BillingController::class, 'index'])->middleware('auth')->name('billings.index');
+Route::get('/usuarios', [BillingController::class, 'showAll'])->middleware('auth')->name('billings.show');
 // Route::post('/stripe-payment-methods', [BillingController::class, 'addPaymentMethod'])->name('billing.payment-methods.create');
 
 

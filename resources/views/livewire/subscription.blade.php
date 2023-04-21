@@ -65,6 +65,9 @@
                     <textarea id="colaboracion_ampa" name="colaboracion_ampa" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder=></textarea>
                 </div>
             <div class="flex-1 justify-end">
+                <p>Tu suscripción actual está {{ $this->getCurrentSubscriptionStatus() ? 'activa' : 'inactiva' }}</p>
+
+
                 @if(auth()->user()->subscribedToPrice('price_1MyCb0CNGUc1AmzpaqIyPyCb', 'Suscripcion Asociado'))
 
                 @if (auth()->user()->subscription('Suscripcion Asociado')->onGracePeriod())
