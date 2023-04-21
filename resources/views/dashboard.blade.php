@@ -45,8 +45,8 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><i class="fa fa-user fa-lg fa-3x ml-"> </i>
-        <div>
+      <div class="app-sidebar__user mx-4"><i class="fa fa-user fa-lg fa-3x ml-"> </i>
+        <div class="mx-2">
           <p class="app-sidebar__user-name ml-2"> {{ auth()->user()->name }}</p>
           <p class="app-sidebar__user-designation ml-2"> Administrador</p>
         </div>
@@ -56,11 +56,9 @@
         <li><a class="app-menu__item" href="{{ route('billings.show') }}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span></i></a>
         </li>
         <li><a class="app-menu__item" href="{{ route('categories.index') }}"><i class="app-menu__icon fa fa-archive"></i><span class="app-menu__label">Categorias</span></a></li>
-        <li><a class="app-menu__item" href="{{ route('events.index') }}"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span></a>
-        </li>
+        <li><a class="app-menu__item" href="{{ route('events.index') }}"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span></a></li>
+        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-calendar"></i><span class="app-menu__label">Registro de eventos</span></a></li>
         <li><a class="app-menu__item" href="{{ route('blogs.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a>
-        </li>
-        <li><a class="app-menu__item" href="{{ route('pagos.index') }}"><i class="app-menu__icon fa fas fa-eur"></i><span class="app-menu__label">Pagos</span></a>
         </li>
         <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Logout</span></a>
         </li>

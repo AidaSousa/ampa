@@ -58,7 +58,9 @@
                                             Renovación automatica
                                         @endif
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
