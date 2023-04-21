@@ -19,12 +19,12 @@
 									<a  class="btn btn-custom px-4"  style="background-color: #009688; color: white;" href="{{ route('billings.index') }}">Métodos de pago</a>
               					</div>
             				</div>
-            				<hr class="my-4">
+            				<hr class="my-8">
             				<h3 class="text-gray-700 font-semibold text-lg">Agregar hijo</h3>
             				@include('children.create')
         				</div>
         			</div>
-      			</div>
+      			</div>  º
       			<div class="col-lg-8">
         			<div class="card">
           				<div class="card-body">
@@ -91,7 +91,7 @@
 					</div>
 			  		<div class="col-sm-3 mx-auto">
 						<div class="col-sm-9 text-secondary">
-							<button type="submit" class="btn btn-custom px-4"  style="background-color: #009688; color: white;">Guardar cambios</button>
+							<button type="submit" class="btn btn-custom px-4"  style="background-color: #009688; color: white">Guardar cambios</button>
 						</div>
 					</div>
 							</form>
@@ -100,11 +100,12 @@
 							<br/>
 							<div class="row mx-2">
 								@include('children.index', ['children' => $children])
-							
+
 							</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 @endsection
