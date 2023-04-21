@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-
 //vista contacto footer
 Route::get('/contacto', function () {
     return view('footer.contactoFooter');
@@ -48,6 +47,11 @@ Route::get('/banco-libros', function () {
 //Formulario asociado vista usuario
 Route::get('/asociate', function () {
     return view('associated.formAsociate');
+});
+
+//Formulario Actividades varias
+Route::get('/actiForm', function () {
+    return view('forms.actividadesForm');
 });
 
 //Formulario banco libros
@@ -80,6 +84,10 @@ Route::get('/associated', function () {
 Route::get('/user', function () {
     return view('user.index');
 })->name('user.index');
+
+Route::get('/user', function () {
+    return view('user.create');
+})->name('user.create');
 
 Route::get('/rutas', function () {
     return view('rutas.index');

@@ -8,7 +8,7 @@
       <div class="app-title">
         <div class="d-flex">
           <h1><i class="fa fa-star"></i> Actividades</h1>
-          <a href="{{ route('event.create') }}" type="button" class="btn btn-primary ml-3" data-toggle="modal" data-target="#ModalCreate" type="button"><i class="fa fa-plus"></i>Nuevo</a>
+          <a href="{{ route('events.create') }}" type="button" class="btn btn-primary ml-3" data-toggle="modal" data-target="#ModalCreate" type="button"><i class="fa fa-plus"></i>Nuevo</a>
         </div>
       </div>
         <div class="row">
