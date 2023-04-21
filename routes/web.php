@@ -253,3 +253,9 @@ Route::get('/articulos', [ArticleController::class, 'index'])->name('articulos')
 Route::get('/user/invoice/{invoice}', function (Request $request, string $invoiceId) {
     return $request->user()->downloadInvoice($invoiceId);
 });
+
+//Calendario
+Route::get('/calendar', [CalendarController::class, 'index'])->name('components.calendar');
+
+
+
