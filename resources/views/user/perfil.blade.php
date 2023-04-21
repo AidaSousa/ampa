@@ -16,7 +16,6 @@
                 					<h4 class="mb-4">{{ auth()->user()->name }}</h4>
 									<p class="text-secondary mb-1">{{ auth()->user()->surname }}</p>
 									<a  class="btn btn-custom px-4"  style="background-color: #009688; color: white;" href="{{ route('billings.index') }}">Hacerme socio</a>
-									<a  class="btn btn-custom px-4"  style="background-color: #009688; color: white;" href="{{ route('billings.index') }}">Métodos de pago</a>
               					</div>
             				</div>
             				<hr class="my-4">
@@ -34,7 +33,7 @@
 								@method('PUT')
 								<!-- Nombre -->
 								<div class="form-group row">
-									<label for="name" class="col-md-4 col-form-label text-md-right">Nombre y apellidos</label>
+									<label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>
 
 									<div class="col-md-6">
 										<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? auth()->user()->name }}" required autocomplete="name" autofocus>
