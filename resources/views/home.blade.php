@@ -6,110 +6,115 @@
 
 <!-- Slider -->
 <section class="section-slide">
-    <div class="wrap-slick1 rs1-slick1">
-        <div class="slick1">
-            <div class="item-slick1" style="background-image: url(img/comedor.jpeg);">
-                <div class="container h-full">
-                    <div class="flex-col-l-m h-full p-t-100 p-b-30">
-                        <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-                            <span class="ltext-202 cl2 respon2"></span>
-                        </div>
+		<div class="wrap-slick1 rs1-slick1">
 
-                        <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-                            <h2 class="ltext-104 cl2 p-t-19 p-b-43 respon1">
-                                Comedor
-                            </h2>
-                        </div>
+			<div class="slick1">
+			<div class="item-slick1" style="background-image: url(img/onosopatio.jpg);">
+					<div class="container h-full">
+						<div class="flex-col-l-m h-full p-t-100 p-b-30">
+							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
+								<span class="ltext-202 cl2 respon2"></span>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
+								<h2 class="ltext-104 cl2 p-t-19 p-b-43 text-white respon1">				
+								Portal de Inscricións Federación de Anpas
+								</h2>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
+								<a href="https://www.fedapascoruna.org/inscripciones/" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+    								Ver
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                        <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                            <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                Ver
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+				<div class="item-slick1" style="background-image: url(img/comedor-1.jpg)">
+					<div class="container h-full">
+						<div class="flex-col-l-m h-full p-t-100 p-b-30">
+							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
+								<span class="ltext-202 cl2 respon2"></span>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
+								<h2 class="ltext-104 cl2 p-t-19 p-b-43 respon1 text-white">
+									Comedor
+								</h2>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
+								<a href="https://jardanaycomedores.es/sanjurjo/wp-login.php?itsec-hb-token=panel&redirect_to=https%3A%2F%2Fjardanaycomedores.es%2Fsanjurjo%2F" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+									Ver
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-            <div class="item-slick1" style="background-image: url(img/onosopatio.jpg);">
-                <div class="container h-full">
-                    <div class="flex-col-l-m h-full p-t-100 p-b-30">
-                        <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
-                            <span class="ltext-202 cl2 respon2"></span>
-                        </div>
+				<div class="item-slick1" style="background-image: url(img/pequeruta-3.jpg);">
+					<div class="container h-full">
+						<div class="flex-col-l-m h-full p-t-100 p-b-30">
+							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
+								<span class="ltext-202 cl2 respon2"></span>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
+								<h2 class="ltext-104 cl2 p-t-19 p-b-43 text-white respon1">
+									Pequerutas
+								</h2>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
+								<a href="/pequeruta" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+									Ver
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                        <div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
-                            <h2 class="ltext-104 cl2 p-t-19 p-b-43 text-white respon1">
-                                O noso patio
-                            </h2>
-                        </div>
+				<div class="item-slick1" style="background-image: url(img/libro.jpg);">
+					<div class="container h-full">
+						<div class="flex-col-l-m h-full p-t-100 p-b-30">
+							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
+								<span class="ltext-202 cl2 respon2"></span>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
+								<h2 class="ltext-104 cl2 p-t-19 p-b-43 text-white respon1">
+									Banco-libros
+								</h2>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
+								<a href="/banco-libros" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+									Ver
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-                        <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                            <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                Ver
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="item-slick1" style="background-image: url(img/pequeruta-3.jpg);">
-                <div class="container h-full">
-                    <div class="flex-col-l-m h-full p-t-100 p-b-30">
-                        <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-                            <span class="ltext-202 cl2 respon2"></span>
-                        </div>
-
-                        <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-                            <h2 class="ltext-104 cl2 p-t-19 p-b-43 text-white respon1">
-                                Pequerutas
-                            </h2>
-                        </div>
-
-                        <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                Ver
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="item-slick1" style="background-image: url(img/libro.jpg)">
-                <div class="container h-full">
-                    <div class="flex-col-l-m h-full p-t-100 p-b-30">
-                        <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-                            <span class="ltext-202 cl2 respon2"></span>
-                        </div>
-
-                        <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-                            <h2 class="ltext-104 cl2 p-t-19 p-b-43 text-white respon1">
-                                Banco-libros
-                            </h2>
-                        </div>
-
-                        <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                            <a href="/banco-libros" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                Ver
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <!-- Product -->
 <section class="sec-product bg0 p-t-100 p-b-50">
 		<div class="container">
+        <div class="p-b-66">
+            <h3 class="ltext-105 cl5 txt-center respon1">
+                ÚLTIMAS ACTIVIDADES
+            </h3>
+        </div>
 			<div class="p-b-32">
-				<h3 class="ltext-105 cl5 txt-center respon1">
-					ÚLTIMAS ACTIVIDADES
-				</h3>
 
 				@include('components.calendar')
+
 			</div>
 
 	<section class="sec-blog bg0 p-t-60 p-b-90 mb-4">

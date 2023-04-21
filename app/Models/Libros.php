@@ -11,7 +11,6 @@ class Libro extends Model
 
     protected $fillable = [
         'user_id',
-        'associated_id',
         'padre_solicita',
         'menor_solicita',
         'curso',
@@ -30,8 +29,4 @@ class Libro extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function associated()
-    {
-        return $this->belongsTo(Associated::class);
-    }
 }

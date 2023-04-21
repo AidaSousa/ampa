@@ -72,7 +72,7 @@
 		<div class="wrap-menu-desktop">
 			<nav class="limiter-menu-desktop p-l-45">
 				<!-- Logo desktop -->
-                <a href="{{ url('/') }}" class="logo">
+				<a href="{{ url('/') }}" class="logo">
 					<img src="{{ URL::asset('img/anpa.png') }}" alt="IMG-LOGO">
 				</a>
 
@@ -429,7 +429,7 @@
 				ps.update();
 			})
 		});
-	</script> -->
+	</script>
 
 
 	<script src="{{ asset('js/main.js') }}"></script>

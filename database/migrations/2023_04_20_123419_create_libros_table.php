@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('libros', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('associated_id');
             $table->string('padre_solicita');
             $table->string('menor_solicita');
             $table->enum('curso', ['4º E.P.', '6º E.P.']);
@@ -29,7 +28,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('associated_id')->references('id')->on('associated');
         });
     }
 
