@@ -9,6 +9,11 @@ use App\Events\UserSubscriptionCreated;
 class Subscription extends Component
 {
 
+    public function getCurrentSubscriptionStatus()
+    {
+        return auth()->user()->subscription('Suscripcion Asociado')->active();
+    }
+
     public function getDefaultPaymentMethodProperty()
     {
         return auth()->user()->defaultPaymentMethod();
@@ -44,11 +49,17 @@ class Subscription extends Component
     public function cancelSubscription()
     {
         auth()->user()->subscription('Suscripcion Asociado')->cancel();
+        $user = auth()->user();
+        $user->is_paid = false;
+        $user->save();
     }
 
     public function resumeSubscription()
     {
         auth()->user()->subscription('Suscripcion Asociado')->resume();
+        $user = auth()->user();
+        $user->is_paid = true;
+        $user->save();
     }
 
 

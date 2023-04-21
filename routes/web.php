@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-
 //vista contacto footer
 Route::get('/contacto', function () {
     return view('footer.contactoFooter');
@@ -85,6 +84,10 @@ Route::get('/associated', function () {
 Route::get('/user', function () {
     return view('user.index');
 })->name('user.index');
+
+Route::get('/user', function () {
+    return view('user.create');
+})->name('user.create');
 
 Route::get('/rutas', function () {
     return view('rutas.index');
@@ -215,6 +218,7 @@ Route::get('/calendar', function () {
 
 //stripe(Aida)
 Route::get('/nuevo-socio', [BillingController::class, 'index'])->middleware('auth')->name('billings.index');
+Route::get('/usuarios', [BillingController::class, 'showAll'])->middleware('auth')->name('billings.show');
 // Route::post('/stripe-payment-methods', [BillingController::class, 'addPaymentMethod'])->name('billing.payment-methods.create');
 
 

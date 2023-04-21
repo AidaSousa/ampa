@@ -4,11 +4,10 @@
 
 @section('content')
 
-
       <div class="app-title">
         <div class="d-flex">
           <h1><i class="fa fa-users"></i> Usuarios</h1>
-          <a href="{{ route('associated.create') }}" class="btn btn-primary ml-3" type="button" onclick="openModal();"><i class="fa fa-plus"></i>Nuevo</a>
+          <a href="{{ route('user.create') }}" type="button" class="btn btn-primary ml-3" data-toggle="modal" data-target="#ModalCreate" type="button"><i class="fa fa-plus"></i>Nuevo</a>
         </div>
       </div>
       
@@ -21,48 +20,42 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Nombre</th>
-                          <th>Apellidos</th>
-                          <th>Email</th>
+                          <th>Nombre del padre/madre</th>
+                          <th>DNI</th>
+                          <th>Teléfono</th>
+                          <th>Dirección</th>
+                          <th>Email de contacto</th>
+                          <th>Beca de comedor</th>
+                          <th>Colaboración con AMPA</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($associated as $asso)
                         <tr>
-                          <td>1</td>
-                          <td>Aida</td>
-                          <td>Sousa Lozano</td>
-                          <td>aida@aida.com</td>
-                          <td></td>
+                          <td>{{$asso->id}}</td>
+                          <td>{{$asso->name_padre_madre}} {{$asso->surname_padre_madre}}</td>
+                          <td>{{$asso->dni}}</td>
+                          <td>{{$asso->telefono}}</td>
+                          <td>{{$asso->direccion}}</td>
+                          <td>{{$asso->email_comunicacion_directa}}</td>
+                          <td>{{$asso->beca_comedor}}</td>
+                          <td>{{$asso->colaboracion_ampa}}</td>
+                          <td>
+                          <div class="d-flex">
+                                      <a href="{{ route('associated.edit', $asso->id) }}" type="button" data-toggle="modal" data-target="#ModalEdit" class="btn btn-sm btn-primary">Editar</a> 
+
+                          </div>
+                            <form method="POST" action="{{ route('associated.destroy', $asso->id) }}" style="display:inline">
+                              {{ csrf_field() }}
+                              {{ method_field('DELETE') }}
+                          <div class="d-flex">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este asociado?')"><i class="fa fa-trash"></i></button>
+                          </div>
+                            </form>
+                          </td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Noelia</td>
-                          <td>Rilova Ayuso</td>
-                          <td>noelia@noelia.com</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Arancha</td>
-                          <td>Fernandez Fernandez</td>
-                          <td>arancha@arancha.com</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Georgette</td>
-                          <td>Velasco Aliss</td>
-                          <td>georgette@georgette.com</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>Ana</td>
-                          <td>De la Vega</td>
-                          <td>ana@ana.com</td>
-                          <td></td>
-                        </tr>
+                        @endforeach
                       </tbody>
                     </table>
                     </div>

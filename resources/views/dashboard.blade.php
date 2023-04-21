@@ -53,24 +53,14 @@
       </div>
       <ul class="app-menu">
         <li><a class="app-menu__item active" href="{{ route('dashboard') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="{{ route('associated.index') }}"><i class="icon fa fa-circle-o"></i> Asociados</a></li>
-            <li><a class="treeview-item" href="{{ route('user.index') }}"><i class="icon fa fa-circle-o"></i> Usuarios</a></li>
-            <li><a class="treeview-item" href="{{ route('roles.index') }}"><i class="icon fa fa-circle-o"></i> Roles</a></li>
-          </ul>
+        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span></i></a>
         </li>
         <li><a class="app-menu__item" href="{{ route('categories.index') }}"><i class="app-menu__icon fa fa-archive"></i><span class="app-menu__label">Categorias</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="{{ route('rutas.index') }}"><i class="icon fa fa-circle-o"></i> Rutas</a></li>
-            <li><a class="treeview-item" href="{{ route('talleres.index') }}"><i class="icon fa fa-circle-o"></i> Talleres</a></li>
-            <li><a class="treeview-item" href="{{ route('libros.index') }}"><i class="icon fa fa-circle-o"></i> Libros</a></li>
-          </ul>
+        <li><a class="app-menu__item" href="{{ route('events.index') }}"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span></a>
+        </li>
+        <li><a class="app-menu__item" href="{{ route('blogs.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a>
         </li>
         <li><a class="app-menu__item" href="{{ route('pagos.index') }}"><i class="app-menu__icon fa fas fa-eur"></i><span class="app-menu__label">Pagos</span></a>
-        </li>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-send"></i><span class="app-menu__label">E-mail</span></a>
         </li>
         <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Logout</span></a>
         </li>
