@@ -15,4 +15,12 @@ class UserController extends Controller
 
         return view('user.perfil', ['children' => $children, 'user' => $user]);
     }
+
+    public function index()
+    {
+    return view('user');
+    }
 }
+
+
+
