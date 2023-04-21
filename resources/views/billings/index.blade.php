@@ -1,6 +1,8 @@
 <x-app-layout>
 
     <x-container class="py-12">
+        {{-- <p>La fecha de inicio de la suscripción es: {{ $startDate }}</p>
+        <div>EndDate: {{ dd($endDate) }}</div> --}}
 
         
         @livewire('payment-method')

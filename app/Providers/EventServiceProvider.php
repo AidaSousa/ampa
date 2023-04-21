@@ -21,6 +21,19 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserSubscriptionCreated' => [
             'App\Listeners\UserSubscriptionCreatedListener',
         ],
+        'Stripe\Webhook\PaymentIntentSucceeded' => [
+            'App\Listeners\HandlePaymentIntentSucceeded',
+        ],
+        'Stripe\Webhook\PaymentIntentFailed' => [
+            'App\Listeners\HandlePaymentIntentFailed',
+        ],
+        'Stripe\Webhook\CheckoutSessionCompleted' => [
+            'App\Listeners\HandleCheckoutSessionCompleted',
+        ],
+        'stripe-webhooks::subscription_schedule.expiring' => [
+            SubscriptionScheduleExpiringListener::class,
+        ],
+
     ];
 
     /**
