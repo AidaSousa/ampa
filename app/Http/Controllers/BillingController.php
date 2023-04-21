@@ -20,19 +20,36 @@ class BillingController extends Controller
     {
         $users = User::all();
         
-        $subscritions = collect();
+        $subscriptions = collect();
 
         foreach ($users as $user) {
         
-            $subscrition = $user->subscription('Suscripcion Asociado');
+            $subscription = $user->subscription('Suscripcion Asociado');
 
             $endDate = '';
+            $startDate = '';
 
-            if (!$subscrition->is_paid) {
-                $endDate = $subscrition->ends_at->format('d-m-Y');
+            // if ($subscription !== null && !$subscription->is_paid) {
+            //     $endDate = $subscription->ends_at->format('d-m-Y');
+            //     $startDate = $subscription->created_at->format('d-m-Y');
+            // } elseif ($subscription !== null) {
+            //     $startDate = $subscription->created_at->format('d-m-Y');
+            // }
+
+            if ($subscription !== null && !$subscription->is_paid) {
+                if ($subscription->ends_at !== null) {
+                    $endDate = $subscription->ends_at->format('d-m-Y');
+                }
+                if ($subscription->created_at !== null) {
+                    $startDate = $subscription->created_at->format('d-m-Y');
+                }
+            } elseif ($subscription !== null) {
+                if ($subscription->created_at !== null) {
+                    $startDate = $subscription->created_at->format('d-m-Y');
+                }
             }
 
-            $subscritions->push([
+            $subscriptions->push([
                 'user_id' => $user->id,
                 'user_name' => $user->name,
                 'user_surname' => $user->surname,
@@ -43,12 +60,12 @@ class BillingController extends Controller
                 'user_direccion' => $user->direccion,
                 'user_colaboracion_ampa' => $user->colaboracion_ampa,
                 'user_is_paid' => $user->is_paid,
-                'start_date' => $subscrition->created_at->format('d-m-Y'),
+                'start_date' =>$startDate,
                 'end_date' => $endDate,
             ]);
             }
         
 
-        return view('billings.show', ['subscriptions' => $subscritions]);
+        return view('billings.show', ['subscriptions' => $subscriptions]);
     }
 }

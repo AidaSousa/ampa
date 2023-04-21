@@ -45,9 +45,9 @@
                                     <td>{{ $subscription['user_colaboracion_ampa'] }}</td>
                                     <td>
                                         @if ($subscription['user_is_paid'])
-                                            Suscripción activa
+                                            Activo
                                         @else
-                                            Suscripción cancelada
+                                            Inactivo
                                         @endif
                                     </td>
                                     <td>{{ $subscription['start_date'] }}</td>

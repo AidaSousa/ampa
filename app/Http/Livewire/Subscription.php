@@ -11,7 +11,14 @@ class Subscription extends Component
 
     public function getCurrentSubscriptionStatus()
     {
-        return auth()->user()->subscription('Suscripcion Asociado')->active();
+        $subscription = auth()->user()->subscription('Suscripcion Asociado');
+    
+        if ($subscription !== null) {
+            return $subscription->active();
+        } else {
+            return false; // o cualquier otro valor que indique que no hay una suscripción activa
+        }
+        // return auth()->user()->subscription('Suscripcion Asociado')->active();
     }
 
     public function getDefaultPaymentMethodProperty()
