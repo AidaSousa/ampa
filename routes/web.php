@@ -49,6 +49,11 @@ Route::get('/asociate', function () {
     return view('associated.formAsociate');
 });
 
+//Formulario Actividades varias
+Route::get('/actiForm', function () {
+    return view('forms.actividadesForm');
+});
+
 //Formulario banco libros
 Route::get('/bancolibros', function () {
     return view('forms.banco-libros');

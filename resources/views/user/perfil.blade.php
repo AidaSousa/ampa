@@ -46,7 +46,7 @@
 										@enderror
                 					</div>
               			</div>
-						<!-- Correo electrónico -->
+                        <!-- Correo electrónico -->
 						<div class="form-group row">
 							<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
 
@@ -100,11 +100,11 @@
 							<br/>
 							<div class="row mx-2">
 								@include('children.index', ['children' => $children])
-							
+
 							</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+</div>
 @endsection
