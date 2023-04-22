@@ -1,18 +1,14 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\AssociatedController;
+
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventUserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SubscriptionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,12 +40,6 @@ Route::get('/pequeruta', function () {
 Route::get('/banco-libros', function () {
     return view('forms.banco-libros');
 });
-//Formulario asociado vista usuario
-// Route::get('/asociate', function () {
-//     return view('associated.formAsociate');
-// });
-
-//Formulario Actividades varias
 
 //Formulario banco libros
 Route::get('/bancolibros', function () {
@@ -65,10 +55,6 @@ Route::get('/avisoLegal', function () {
 Route::get('/politicaPriv', function () {
     return view('footer.politicaPrivacidad');
 });
-
-// Route::get('/dash', function () {
-//     return view('user.index', ['user' => app()->make('App\Http\Controllers\UserController')->userIndex()]);
-// })->name('dash');
 
 Route::get('/dashboard', function () {
     return view('home-dashboard');
@@ -92,30 +78,13 @@ Route::get('/logout', function () {
     return view('logout.index');
 })->name('logout.index');
 
-// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-// Route::post('/login', [LoginController::class, 'login']);
+
 Route::get('/logout', [LoginController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
 
-// Rutas de registro y verificación de correo electrónico
-// Route::get('/register', [LoginController::class, 'showRegistrationForm'])->name('register');
-// Route::post('/register', [LoginController::class, 'register']);
-// Route::put('profile/{id}', [LoginController::class, 'editUser'])->middleware('auth')->name('user.update');
-// Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');
-// Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
-// Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
-
 Route::get('/perfil', [UserController::class, 'showProfile'])->middleware('auth')->name('user.perfil');
 
-//Children
-Route::get('/children-index', [ChildrenController::class, 'indexChildren'])->name('children.index');
-Route::get('/children-create', [ChildrenController::class, 'createChildren'])->name('children.create');
-Route::post('/children-store', [ChildrenController::class, 'storeChildren'])->name('children.store');
-Route::get('/children-edit/{id}', [ChildrenController::class, 'editChildren'])->name('children.edit');
-Route::put('/children-update/{id}', [ChildrenController::class, 'updateChildren'])->name('children.update');
-Route::get('/children-show', [ChildrenController::class, 'showChildren'])->name('children.show');
-Route::delete('/children-destroy/{id}', [ChildrenController::class, 'destroyChildren'])->name('children.destroy');
 
 //Categories
 Route::get('/category-index', [CategoryController::class, 'indexCategory'])->name('categories.index');
@@ -133,19 +102,15 @@ Route::get('/event-create', [EventController::class, 'createEvent'])->name('even
 Route::post('/event-store', [EventController::class, 'storeEvent'])->name('events.store');
 Route::get('/event-show/{id}', [EventController::class, 'showEvent'])->name('events.show');
 Route::delete('/event-destroy/{id}', [EventController::class, 'destroyEvent'])->name('events.destroy');
-// Route::get('/index', function () {
-//     return view('events.events');
-// })->name('events.events');
+
 
 
 //Event user
-Route::get('/eventUser-index', [EventUserController::class, 'indexEventUser'])->name('eventUser.index');
-Route::get('/formularios', [EventUserController::class, 'createEventUser'])->name('forms.create');
-Route::post('/eventUser-store', [EventUserController::class, 'storeEventUser'])->name('eventUser.store');
-Route::get('/eventUser-edit/{id}', [EventUserController::class, 'editEventUser'])->name('eventUser.edit');
-Route::put('/eventUser-update/{id}', [EventUserController::class, 'updateEventUser'])->name('eventUser.update');
-Route::get('/eventUser-show', [EventUserController::class, 'showEventUser'])->name('eventUser.show');
-Route::get('/eventUser-destroy/{id}', [EventUserController::class, 'destroyEventUser'])->name('eventUser.destroy');
+Route::get('/eventUser-index', [EventUserController::class, 'indexEventUser'])->name('events-user.index');
+Route::get('/formularios', [EventUserController::class, 'createEventUser'])->name('events-user.create');
+Route::post('/eventuser', [EventUserController::class, 'store'])->name('events-user.store');
+Route::get('/eventUser-show', [EventUserController::class, 'showEventUser'])->name('events-user.show');
+Route::delete('/eventUser-destroy/{id}', [EventUserController::class, 'destroyEventUser'])->name('events-user.destroy');
 
 
 //BLOG Dashboard
@@ -163,12 +128,6 @@ Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
 Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::get('ampa-blog', [BlogController::class, 'showAllBlogs'])->name('blog.blogs');
-
-// Ruta para mostrar el formulario de edición de un blog
-// Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-
-// Ruta para actualizar un blog existente
-// Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
 
 // Ruta para eliminar un blog
 Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');

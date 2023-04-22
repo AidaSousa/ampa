@@ -19,8 +19,6 @@
               					</div>
             				</div>
             				<hr class="my-4">
-            				<h3 class="text-gray-700 font-semibold text-lg">Agregar hijo</h3>
-            				@include('children.create')
         				</div>
         			</div>
       			</div>
@@ -97,10 +95,6 @@
 							<br/>
 							<hr>
 							<br/>
-							<div class="row mx-2">
-								@include('children.index', ['children' => $children])
-
-							</div>
 				</div>
 			</div>
 		</div>

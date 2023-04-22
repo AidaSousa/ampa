@@ -15,7 +15,7 @@ class EventUserController extends Controller
     public function indexEventUser() {
 
         $eventUsers = EventUser::all();
-        return view('eventUser.index', ['eventUsers' => $eventUsers]);
+        return view('events-user.index', ['eventUsers' => $eventUsers]);
     }
 
     public function createEventUser() {
@@ -23,86 +23,48 @@ class EventUserController extends Controller
         // Obtener el usuario autenticado
         $user = auth()->user();
     
-        // Obtener los hijos del usuario autenticado
-        $children = $user->children;
-
-        if (!$children || $children->count() === 0) {
-            return redirect()->back()->withErrors('No se encontraron hijos asociados a este usuario');
-        }
-    
-        // Obtener todos los eventos
         $events = Event::all();
     
-        return view('forms.create', [
-            'user' => $user,
-            'children' => $children,
+        return view('events-user.create', [
             'events' => $events,
+            'user' => $user
         ]);
     }
     
 
-    public function storeEventUser(Request $request) {
+    public function store(Request $request) {
+
+        $user_id = auth()->user()->id;
 
         $eventsUser = new EventUser();
         $eventsUser->event_id = $request->input('event_id');
-        $eventsUser->user_id = $request->input('user_id');
-        $eventsUser->child_id = $request->input('child_id');
+        $eventsUser->user_id = $user_id;
+        $eventsUser->name_children = $request->input('name_children');
+        $eventsUser->surname_children = $request->input('surname_children');
+        $eventsUser->birth_date = $request->input('birth_date');
+        $eventsUser->school_year = $request->input('school_year');
         $eventsUser->phone_contact = $request->input('phone_contact');
         $eventsUser->matriculado_centro = $request->input('matriculado_centro');
         $eventsUser->directo_comedor = $request->input('directo_comedor');
         $eventsUser->necesidades_especiales = $request->input('necesidades_especiales');
-        $eventsUser->quantity = $request->input('quantity');
-        $eventsUser->total_price = $request->input('total_price');
-        $eventsUser->payment_id = $request->input('payment_id');
         $eventsUser->save();
     
-        return redirect()->route('eventUser.index')->with('success', 'Event User creado correctamente.');
+        return redirect()->route('events-user.index')->with('success', 'Event User creado correctamente.');
     }
 
     public function showEventUser($id) {
 
         $eventsUser = EventUser::findOrFail($id);
 
-        return view('eventUser.show', ['eventsUser' => $eventsUser]);
-    }
-
-    public function editEventUser(EventUser $eventUser) {
-
-        $events = Event::all();
-        $users = User::all();
-        $children = Child::all();
-        // $payments = Payment::all();
-
-        return view('eventUser.edit', ['eventUser' => $eventUser, "events" => $events, 'users' => $users, 'children' => $children]);
-    }
-
-    public function updateEventUser(Request $request, EventUser $eventUser) {
-
-        $eventUser->event_id = $request->input('event_id');
-        $eventUser->user_id = $request->input('user_id');
-        $eventUser->child_id = $request->input('child_id');
-        $eventUser->phone_contact = $request->input('phone_contact');
-        $eventUser->matriculado_centro = $request->input('matriculado_centro');
-        $eventUser->directo_comedor = $request->input('directo_comedor');
-        $eventUser->necesidades_especiales = $request->input('necesidades_especiales');
-        $eventUser->quantity = $request->input('quantity');
-        $eventUser->total_price = $request->input('total_price');
-        $eventUser->payment_id = $request->input('payment_id');
-        $eventUser->save();
-    
-        return redirect()->route('eventUser.index')->with('success', 'Event User actualizado correctamente.');
+        return view('events-user.show', ['eventsUser' => $eventsUser]);
     }
 
     public function destroyEventUser($id) {
 
         $eventUser = EventUser::findOrFail($id);
 
-        if ($eventUser->user_id != Auth::user()->id) {
-            return redirect()->back()->withErrors('message', 'No tienes permiso para eliminar este registro');
-        }
-
         $eventUser->delete();
-        return redirect()->route('eventUser.index');
+        return redirect()->route('events-user.index');
     }
     
 }

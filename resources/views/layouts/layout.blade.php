@@ -97,7 +97,7 @@
                                 <ul class="sub-menu">
                                     <li><a href="{{ route('user.perfil') }}">Mi perfil</a></li>
                                     <li><a href="{{ route('billings.index')}}">Hazte socio</a></li>
-                                    <li><a href="{{ route('forms.create')}}">Formulario actividades</a></li>
+                                    <li><a href="{{ route('events-user.create')}}">Formulario actividades</a></li>
                                     <li><a href="{{ route('logout') }}">Cerrar sesión</a></li>
                                 </ul>
                             </li>
@@ -174,7 +174,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('forms.create') }}">Formulario actividades</a>
+                    <a href="{{ route('events-user.create') }}">Formulario actividades</a>
                 </li>
 
                 <li>
@@ -217,7 +217,7 @@
 <footer class="bg3 p-t-75 p-b-32">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3 p-b-50">
+            {{-- <div class="col-sm-6 col-lg-3 p-b-50">
                 <ul text-justify>
                     <li class="p-b-10">
                         <a href="/contacto" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
@@ -296,13 +296,13 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
 
         <p class="stext-107 cl6 txt-center">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>
                 document.write(new Date().getFullYear());
-            </script> All rights reserved | This template is made with ❤ by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            </script> All rights reserved | This template is made with ❤ by Montevixia Team</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         </p>
     </div>
