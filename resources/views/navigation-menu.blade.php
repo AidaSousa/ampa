@@ -13,8 +13,8 @@
         ],
         [
             'name' => 'Blog',
-            'url' => route('blogs.index'),
-            'active' => request()->routeIs('blogs.*')
+            'url' => route('blog.index'),
+            'active' => request()->routeIs('blog.*')
         ],
         ];
 @endphp

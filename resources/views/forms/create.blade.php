@@ -4,7 +4,8 @@
 
 @section('content')
 
-<div class="row justify-content-center" style= "margin-top: 80px;">
+
+ <div class="row justify-content-center" style= "margin-top: 80px;">
         <div class="col-md-6">
           <div class="tile">
             <h3 class="tile-title text-center" style="margin-bottom: 80px">FORMULARIO DE INSCRIPCION</h3>
@@ -48,7 +49,7 @@
 </div>
               </form>
 </div>
-</div>
+</div> 
 
 
 

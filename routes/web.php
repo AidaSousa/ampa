@@ -45,9 +45,11 @@ Route::get('/banco-libros', function () {
     return view('forms.banco-libros');
 });
 //Formulario asociado vista usuario
-Route::get('/asociate', function () {
-    return view('associated.formAsociate');
-});
+// Route::get('/asociate', function () {
+//     return view('associated.formAsociate');
+// });
+
+//Formulario Actividades varias
 
 //Formulario Actividades varias
 Route::get('/actiForm', function () {
@@ -77,13 +79,6 @@ Route::get('/dashboard', function () {
     return view('home-dashboard');
 })->name('dashboard');
 
-Route::get('/associated', function () {
-    return view('associated.show');
-})->name('associated.show');
-
-Route::get('/user', function () {
-    return view('user.index');
-})->name('user.index');
 
 Route::get('/user', function () {
     return view('user.create');
@@ -93,21 +88,10 @@ Route::get('/rutas', function () {
     return view('rutas.index');
 })->name('rutas.index');
 
-Route::get('/talleres', function () {
-    return view('talleres.index');
-})->name('talleres.index');
-
 Route::get('/libros', function () {
     return view('libros.index');
 })->name('libros.index');
 
-Route::get('/pagos', function () {
-    return view('pagos.index');
-})->name('pagos.index');
-
-Route::get('/roles', function () {
-    return view('roles.index');
-})->name('roles.index');
 
 Route::get('/logout', function () {
     return view('logout.index');
@@ -148,117 +132,66 @@ Route::get('/category-show', [CategoryController::class, 'showCategory'])->name(
 Route::delete('/category-destroy/{id}', [CategoryController::class, 'destroyCategory'])->name('categories.destroy');
 
 //Events
-Route::get('/actividades', [EventController::class, 'indexEvent'])->name('events.events');
+Route::get('/actividades', [EventController::class, 'indexEvent'])->name('events.index');
+Route::get('/todas-las-actividades', [EventController::class, 'showAllEvents'])->name('events.events');
 Route::get('/event-create', [EventController::class, 'createEvent'])->name('events.create');
 Route::post('/event-store', [EventController::class, 'storeEvent'])->name('events.store');
-Route::get('/event-edit/{id}', [EventController::class, 'editEvent'])->name('events.edit');
-Route::put('/event-update/{id}', [EventController::class, 'updateEvent'])->name('events.update');
-Route::get('/event-show', [EventController::class, 'showEvent'])->name('events.show');
-Route::get('/event-destroy/{id}', [EventController::class, 'destroyEvent'])->name('events.destroy');
-Route::get('/index', function () {
-    return view('events.index');
-})->name('events.index');
+Route::get('/event-show/{id}', [EventController::class, 'showEvent'])->name('events.show');
+Route::delete('/event-destroy/{id}', [EventController::class, 'destroyEvent'])->name('events.destroy');
+// Route::get('/index', function () {
+//     return view('events.events');
+// })->name('events.events');
 
 
 //Event user
 Route::get('/eventUser-index', [EventUserController::class, 'indexEventUser'])->name('eventUser.index');
-Route::get('/eventUser-create', [EventUserController::class, 'createEventUser'])->name('eventUser.create');
+Route::get('/formularios', [EventUserController::class, 'createEventUser'])->name('forms.create');
 Route::post('/eventUser-store', [EventUserController::class, 'storeEventUser'])->name('eventUser.store');
 Route::get('/eventUser-edit/{id}', [EventUserController::class, 'editEventUser'])->name('eventUser.edit');
 Route::put('/eventUser-update/{id}', [EventUserController::class, 'updateEventUser'])->name('eventUser.update');
 Route::get('/eventUser-show', [EventUserController::class, 'showEventUser'])->name('eventUser.show');
 Route::get('/eventUser-destroy/{id}', [EventUserController::class, 'destroyEventUser'])->name('eventUser.destroy');
 
-//Associated
-Route::match(['get', 'post'], '/associated-index', [AssociatedController::class, 'indexAssociated'])->name('associated.index');
-Route::post('/associated-create', [AssociatedController::class, 'createAssociated'])->name('associated.create');
-Route::post('/associated-store', [AssociatedController::class, 'storeAssociated'])->name('associated.store');
-Route::get('/associated-edit/{id}', [AssociatedController::class, 'editAssociated'])->name('associated.edit');
-Route::put('/associated-update/{id}', [AssociatedController::class, 'updateAssociated'])->name('associated.update');
-Route::get('/associated-show', [AssociatedController::class, 'showAssociated'])->name('associated.show');
-Route::delete('/associated-destroy/{id}', [AssociatedController::class, 'destroyAssociated'])->name('associated.destroy');
 
-//BLOG
+//BLOG Dashboard
 // Ruta para mostrar todos los blogs
-Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
 
 
 // Ruta para mostrar el formulario de creación de un blog
-Route::get('/blog/create', [BlogController::class, 'create'])->name('posts.create');
+Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
 
 // Ruta para guardar un nuevo blog
-Route::post('/blog', [BlogController::class, 'store'])->name('posts.store');
+Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
 
-// Ruta para mostrar un blog específico
-Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blogs.show');
+// Ruta para mostrar un blog específico layout
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+
+Route::get('ampa-blog', [BlogController::class, 'showAllBlogs'])->name('blog.blogs');
 
 // Ruta para mostrar el formulario de edición de un blog
-Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('posts.edit');
+// Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
 
 // Ruta para actualizar un blog existente
-Route::put('/blog/{id}', [BlogController::class, 'update'])->name('posts.update');
+// Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
 
 // Ruta para eliminar un blog
-Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('posts.destroy');
-
-//Ruta para la página de suscripción
-// Route::get('/suscripcion', [SubscriptionController::class, 'index'])->name('subscription.index');
-// Route::post('/suscripcion/subscribe', [SubscriptionController::class, 'subscribe'])->name('subscription.subscribe');
-// Route::post('/stripe/webhook', 'WebhookController@handleWebhook');
-
-//Ruta para la página de suscripción
-// Route::get('/suscripcion', [SubscriptionController::class, 'index'])->name('subscription.index');
-// Route::post('/suscripcion/subscribe', [SubscriptionController::class, 'subscribe'])->name('subscription.subscribe');
-// Route::post('/stripe/webhook', 'WebhookController@handleWebhook');
+Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
 
 //Calendario
-Route::get('/calendar', function () {
-    return view('components.calendar');
-});
+// Route::get('/calendar', function () {
+//     return view('components.calendar');
+// });
 
 //stripe(Aida)
 Route::get('/nuevo-socio', [BillingController::class, 'index'])->middleware('auth')->name('billings.index');
 Route::get('/usuarios', [BillingController::class, 'showAll'])->middleware('auth')->name('billings.show');
-// Route::post('/stripe-payment-methods', [BillingController::class, 'addPaymentMethod'])->name('billing.payment-methods.create');
-
-
-// use App\Http\Controllers\ProductController;
-// use App\Http\Controllers\ArticleController;
-// use App\Http\Controllers\BillingController;
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Route;
-
-// /*
-// |--------------------------------------------------------------------------
-// | Web Routes
-// |--------------------------------------------------------------------------
-// |
-// | Here is where you can register web routes for your application. These
-// | routes are loaded by the RouteServiceProvider and all of them will
-// | be assigned to the "web" middleware group. Make something great!
-// |
-// */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
-
-Route::get('/productos', [ProductController::class, 'index'])->name('productos');
-
-Route::get('/articulos', [ArticleController::class, 'index'])->name('articulos');
-
-// Route::get('/billings', [BillingController::class, 'index'])->middleware('auth')->name('billings.index');
 
 Route::get('/user/invoice/{invoice}', function (Request $request, string $invoiceId) {
     return $request->user()->downloadInvoice($invoiceId);
 });
+
+
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::put('/users/{id}', [UserController::class, 'update'])->name('user.update');
+

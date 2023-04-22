@@ -87,7 +87,7 @@
 
                             </li>
                             <li>
-                                <a href="{{ route('blogs.index') }}">Blog</a>
+                                <a href="{{ route('blog.index') }}">Blog</a>
                             </li>
                             @auth
                             <li class="active-menu">
@@ -97,6 +97,7 @@
                                 <ul class="sub-menu">
                                     <li><a href="{{ route('user.perfil') }}">Mi perfil</a></li>
                                     <li><a href="{{ route('billings.index')}}">Hazte socio</a></li>
+                                    <li><a href="{{ route('forms.create')}}">Formulario actividades</a></li>
                                     <li><a href="{{ route('logout') }}">Cerrar sesión</a></li>
                                 </ul>
                             </li>
@@ -161,11 +162,19 @@
                     <a href="{{ route('events.events') }}">Actividades</a>
                 </li>
                 <li>
-                    <a href="{{ route('blogs.index') }}">Blog</a>
+                    <a href="{{ route('blog.index') }}">Blog</a>
                 </li>
                 @auth
                 <li>
                     <a href="{{ route('user.perfil') }}">Mi perfil</a>
+                </li>
+
+                <li>
+                    <a href="{{ route('billings.index') }}">Hazte socio</a>
+                </li>
+
+                <li>
+                    <a href="{{ route('forms.create') }}">Formulario actividades</a>
                 </li>
 
                 <li>

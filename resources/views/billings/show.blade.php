@@ -29,7 +29,6 @@
                                 <th>Pago</th>
                                 <th>Fecha inicio</th>
                                 <th>Fecha Fin</th>
-                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,9 +44,9 @@
                                     <td>{{ $subscription['user_colaboracion_ampa'] }}</td>
                                     <td>
                                         @if ($subscription['user_is_paid'])
-                                            Suscripción activa
+                                            Activo
                                         @else
-                                            Suscripción cancelada
+                                            Inactivo
                                         @endif
                                     </td>
                                     <td>{{ $subscription['start_date'] }}</td>
@@ -58,7 +57,6 @@
                                             Renovación automatica
                                         @endif
                                     </td>
-                                    <td></td>
                                 </tr>
                             @endforeach
                         </tbody>

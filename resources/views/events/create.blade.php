@@ -13,7 +13,7 @@
                       <div class="panel-body">
                               {{ csrf_field() }}
                               <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                              <label for="name" class="col-md-4 control-label">Nombre del padre/madre</label>
+                              <label for="name" class="col-md-4 control-label">Actividad</label>
                                   <div class="col-xs-12 col-sm-12 col-md-12">
                                       <input id="name" type="text" class="form-control" name="name" required>
                                       @if ($errors->has('name'))
@@ -34,24 +34,35 @@
                                       @endif
                                   </div>
                               </div>
+                              <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+                                <label for="image" class="col-md-4 control-label">Imagen</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <input id="image" type="file" class="form-control" name="image" required>
+                                        @if ($errors->has('image'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('image') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
                               <div class="form-group{{ $errors->has('date_event') ? ' has-error' : '' }}">
-                              <label for="date_event" type="date" class="col-md-4 control-label">Fecha de actividad</label>
+                              <label for="start_date" type="date" class="col-md-4 control-label">Fecha de actividad</label>
                                   <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <input id="date_event" type="date" class="form-control" name="date_event" required>
-                                      @if ($errors->has('date_event'))
+                                      <input id="start_date" type="date" class="form-control" name="start_date" required>
+                                      @if ($errors->has('start_date'))
                                       <span class="help-block">
-                                          <strong>{{ $errors->first('date_event') }}</strong>
+                                          <strong>{{ $errors->first('start_date') }}</strong>
                                       </span>
                                       @endif
                                   </div>
                               </div>
-                              <div class="form-group{{ $errors->has('price_no_accociated') ? ' has-error' : '' }}">
-                              <label for="price_no_accociated" class="col-md-4 control-label">Precio de no asociado</label>
+                              <div class="form-group{{ $errors->has('price_no_asociated') ? ' has-error' : '' }}">
+                              <label for="price_no_asociated" class="col-md-4 control-label">Precio de no asociado</label>
                                   <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <input id="price_no_accociated" type="text" class="form-control" name="price_no_accociated" required>
-                                      @if ($errors->has('price_no_accociated'))
+                                      <input id="price_no_asociated" type="text" class="form-control" name="price_no_asociated" required>
+                                      @if ($errors->has('price_no_asociated'))
                                       <span class="help-block">
-                                          <strong>{{ $errors->first('price_no_accociated') }}</strong>
+                                          <strong>{{ $errors->first('price_no_ascociated') }}</strong>
                                       </span>
                                       @endif
                                   </div>
@@ -67,28 +78,34 @@
                                       @endif
                                   </div>
                               </div>
-                              <div class="form-group{{ $errors->has('date_finilized') ? ' has-error' : '' }}">
-                              <label for="date_finilized" type="date" class="col-md-4 control-label">Fecha de finalización de actividad</label>
+                              <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
+                              <label for="end_date" type="date" class="col-md-4 control-label">Fecha de finalización de actividad</label>
                                   <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <input id="date_finilized" type="date" class="form-control" name="date_finilized" required>
-                                      @if ($errors->has('date_finilized'))
+                                      <input id="end_date" type="date" class="form-control" name="end_date" required>
+                                      @if ($errors->has('end_date'))
                                       <span class="help-block">
-                                          <strong>{{ $errors->first('date_finilized') }}</strong>
+                                          <strong>{{ $errors->first('end_date') }}</strong>
                                       </span>
                                       @endif
                                   </div>
                               </div>
                               <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
-                              <label for="category_id" class="col-md-4 control-label">Categoria</label>
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <input id="category_id" type="text" class="form-control" name="category_id" required>
-                                      @if ($errors->has('category_id'))
-                                      <span class="help-block">
-                                          <strong>{{ $errors->first('category_id') }}</strong>
-                                      </span>
-                                      @endif
-                                  </div>
-                              </div>
+                                <label for="category_id" class="col-md-4 control-label">Categoría</label>
+                                <div class="col-md-6">
+                                    <select id="category_id" name="category_id" class="form-control" required>
+                                        <option value="">Selecciona una categoría</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('category_id'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('category_id') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            
                                   <div class="form-group">
                                       <div class="col-md-6 col-md-offset-4">
                                           <button type="submit" class="btn btn-primary">

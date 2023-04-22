@@ -9,7 +9,7 @@
                     <img src="{{ asset($post->image_path) }}" alt="Imagen del post" class="img-fluid mb-4">
                 </div>
                 <p class="mb-4 text-justify">{{ $post->content }}</p>
-                <a href="{{ route('blogs.index') }}" class="btn btn-success mx-auto" style="background-color: #459C94; margin-top: 20px; margin-bottom: 20px;">Volver</a>
+                <a href="{{ route('blog.index') }}" class="btn btn-success mx-auto" style="background-color: #459C94; margin-top: 20px; margin-bottom: 20px;">Volver</a>
             </div>
         </div>
     </div>
