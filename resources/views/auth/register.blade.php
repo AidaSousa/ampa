@@ -18,7 +18,7 @@
             <div class="logo">
                 <h1>Montevixia</h1>
             </div>
-            <div class="login-box col-sm-3 justify-center w">
+            <div class="login-box col-sm-6 justify-center w">
                 <div id="divLoading">
                     <div>
                         <!--<img src="/img/loading.svg" alt="Loading">-->
@@ -26,52 +26,78 @@
                 </div>
                 <form method="POST" action="{{ route('register') }}" class="form-horizontal mx-auto">
                     @csrf
-                    <div class="form-group w-75">
-                        <label for="name" class="col-md-8 mt-3 mx-auto control-label text-center">Nombre</label>
-                        <input id="name" class="form-control mx-5 w-full" type="text" name="name" required autofocus autocomplete="name" />
+                    <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <div class="form-group">
+                        <label for="name" class="control-label">Nombre</label>
+                        <input id="name" class="form-control" type="text" name="name" required autofocus autocomplete="name" />
+                        </div>
                     </div>
-                    <div class="form-group w-75">
-                        <label for="name" class="col-md-8 mt-1 mx-auto control-label text-center">Apellidos</label>
-                        <input id="surname" class="form-control mx-5 w-full" type="text" name="surname"  required autofocus autocomplete="surname" />
+                    <div class="col-md-6 mt-3">
+                        <div class="form-group">
+                        <label for="surname" class="control-label">Apellidos</label>
+                        <input id="surname" class="form-control" type="text" name="surname"  required autofocus autocomplete="surname" />
+                        </div>
                     </div>
-                    <div class="form-group w-75">
-                        <x-label for="email" value="{{ __('Email') }}" class="col-md-8 mt-1 mx-4 control-label text-center" />
-                        <x-input id="email" class="form-control mx-5 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                     </div>
-                    <div class="form-group w-75">
-                        <label for="dni" class="col-md-8 mt-1 control-label text-center">DNI</label>
-                        <input id="dni" class="form-control mx-5 w-full" type="text" name="dni"  required autofocus autocomplete="dni" />
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label for="email" class="control-label">Email</label>
+                        <input id="email" class="form-control" type="email" name="email" required autocomplete="username" />
+                        </div>
                     </div>
-                    <div class="form-group w-75">
-                        <label for="beca_comedor" class="col-md-8 mt-1 mx-5 control-label text-center">Sodes solicitantes da beca comedor?</label>
-                        <select id="beca_comedor" class="form-control mx-5 w-full" name="beca_comedor">
-                        <option selected="">Seleccione a súa situación</option>
-                        <option value="si">Si</option>
-                        <option value="no">Non</option>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label for="dni" class="control-label">DNI</label>
+                        <input id="dni" class="form-control" type="text" name="dni"  required autofocus autocomplete="dni" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label for="beca_comedor" class="control-label">Sodes solicitantes da beca comedor?</label>
+                        <select id="beca_comedor" class="form-control" name="beca_comedor">
+                            <option selected="">Seleccione a súa situación</option>
+                            <option value="si">Si</option>
+                            <option value="no">Non</option>
                         </select>
+                        </div>
                     </div>
-                    <div class="form-group w-75">
-                        <label for="telefono" class="col-md-8 mt-1 mx-auto control-label text-center">Teléfono</label>
-                        <input id="telefono" class="form-control mx-5 w-full" type="text" name="telefono"  required autofocus autocomplete="telefono" />
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label for="telefono" class="control-label">Teléfono</label>
+                        <input id="telefono" class="form-control" type="text" name="telefono"  required autofocus autocomplete="telefono" />
+                        </div>
                     </div>
-                    <div class="form-group w-75">
-                        <label for="direccion" class="col-md-8 mt-1 mx-auto control-label text-center">Dirección</label>
-                        <textarea id="direccion" class="form-control mx-5 w-full" rows="2" name="direccion"  required autofocus autocomplete="direccion" ></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="colaboracion_ampa" class="col-md-8 mt-1 mx-5 control-label text-center">No caso de estar interesado/a en colaborar coa ANPA, qué consideras que podes aportar? En que área te gustaría axudar ? (festas, actividades, comedor, subvencións, horta...)</label>
-                        <textarea id="colaboracion_ampa" class="form-control mx-5 w-75" rows="2" name="colaboracion_ampa"  required autofocus autocomplete="colaboracion_ampa" ></textarea>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                        <label for="direccion" class="control-label">Dirección</label>
+                        <textarea id="direccion" class="form-control" rows="2" name="direccion"  required autofocus autocomplete="direccion" ></textarea>
+                        </div>
                     </div>
-                    <div class="form-group w-75 pt-4">
-                        <x-label for="password" value="{{ __('Password') }}" class="col-md-8  mx-auto control-label text-center" />
-                        <x-input id="password" class="form-control mx-5 w-full" type="password" name="password" required autocomplete="new-password" />
+                    <div class="col-md-12">
+                        <div class="form-group">
+                        <label for="colaboracion_ampa" class="control-label">No caso de estar interesado/a en colaborar coa ANPA, qué consideras que podes aportar? En que área te gustaría axudar ? (festas, actividades, comedor, subvencións, horta...)</label>
+                        <textarea id="colaboracion_ampa" class="form-control" rows="2" name="colaboracion_ampa"  required autofocus autocomplete="colaboracion_ampa" ></textarea>
                     </div>
-        
-                    <div class="form-group w-75">
-                        <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" class="col-md-8 mt-3 mx-5 control-label " />
-                        <x-input id="password_confirmation" class="form-control mx-5 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <x-label for="password" value="{{ __('Password') }}" class="mx-auto control-label text-center" />
+                        <x-input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" />
                     </div>
-        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" class="col-md-8 mx-5 control-label " />
+                        <x-input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
+                    </div>
+                    </div>
+                    </div>
                     @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                         <div class="mt-4">
                             <x-label for="terms">
@@ -91,11 +117,7 @@
 
                     <div class="form-group w-75">
                     <div class="flex justify-between mx-2">
-                        <a class="ml-4 underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
-        
-                        <button class="btn btn-primary ml-4">
+                        <button class="btn btn-primary">
                             {{ __('Register') }}
                         </button>
                     </div>

@@ -45,24 +45,11 @@
                     <x-label for="password" value="{{ __('Password') }}" class="control-label" />
                     <x-input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
                 </div>
-
-                <div class="form-group">
-                    <label for="remember_me" class="flex items-center">
-                        <x-checkbox id="remember_me" name="remember" />
-                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                    </label>
-                </div>
-
                 <div class="form-group">
                     <div class="flex justify-between mx-2">
                         <button class="btn btn-primary ml-5 mb-1">
                             {{ __('Log in') }}
                         </button>
-                        @if (Route::has('password.request'))
-                            <a class="ml-5 underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
-                            </a>
-                        @endif
                     </div>
                 </div>
             </form>
