@@ -45,25 +45,22 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><i class="fa fa-user fa-lg fa-3x ml-"> </i>
-        <div>
+      <div class="app-sidebar__user mx-4"><i class="fa fa-user fa-lg fa-3x ml-"> </i>
+        <div class="mx-2">
           <p class="app-sidebar__user-name ml-2"> {{ auth()->user()->name }}</p>
           <p class="app-sidebar__user-designation ml-2"> Administrador</p>
         </div>
       </div>
       <ul class="app-menu">
         <li><a class="app-menu__item active" href="{{ route('dashboard') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="{{ route('associated.index') }}"><i class="icon fa fa-circle-o"></i> Registro de eventos</a></li>
-          </ul>
+        <li><a class="app-menu__item" href="{{ route('billings.show') }}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span></i></a>
         </li>
         <li><a class="app-menu__item" href="{{ route('categories.index') }}"><i class="app-menu__icon fa fa-archive"></i><span class="app-menu__label">Categorias</span></a></li>
-        <li><a class="app-menu__item" href="{{ route('events.index') }}"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span></a>
+        <li><a class="app-menu__item" href="{{ route('events.index') }}"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span></a></li>
+        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-calendar"></i><span class="app-menu__label">Registro de eventos</span></a></li>
+        <li><a class="app-menu__item" href="{{ route('blog.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a>
         </li>
-        <li><a class="app-menu__item" href="{{ route('blogs.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a>
-        </li>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Logout</span></a>
+        <li><a class="app-menu__item" href="{{ route('logout')}}"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Logout</span></a>
         </li>
       </ul>
     </aside>

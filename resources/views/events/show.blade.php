@@ -1,17 +1,18 @@
 @extends('layouts.layout')
 
 @section('content') 
-<div class="container mt-4 mb-4">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h1 class="mb-4">{{ $event->name }}</h1>
-                <div class="d-flex flex-column align-items-center text-center">
-                    <img src="{{ asset($event->image_path) }}" alt="Imagen del post" class="img-fluid mb-4">
-                </div>
-                <p class="mb-4 text-justify">{{ $event->description }}</p>
-                <a href="{{ route('events.events') }}" class="btn btn-success mx-auto" style="background-color: #459C94; margin-top: 20px; margin-bottom: 20px;">Volver</a>
-            </div>
-        </div>
-    </div>
 
+<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ruta mx-auto">
+    <div class="block2">
+        <div class="block2-pic hov-img0 p-0">
+            <img src="{{asset($event->image)}}" alt="IMG">
+        </div>
+        <h4 class="mtext-101 cl2 hov-cl1 trans-04">
+            {{ $event->name }}
+        </h4>
+        <p class="mb-4 text-justify">{{ $event->description }}</p>
+
+        <p class="stext-108 cl6">{{ $event->price_associated }}€ asociados / {{ $event->price_no_asociated }}€ no asociados</p>
+    </div>
+</div>
 @endsection

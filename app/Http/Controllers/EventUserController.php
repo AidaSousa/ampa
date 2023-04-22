@@ -20,13 +20,26 @@ class EventUserController extends Controller
 
     public function createEventUser() {
 
-        $events = Event::all();
-        $users = User::all();
-        $children = Child::all();
-        // $payments = Payment::all();
+        // Obtener el usuario autenticado
+        $user = auth()->user();
+    
+        // Obtener los hijos del usuario autenticado
+        $children = $user->children;
 
-        return view('eventUser.create', ['events' => $events, 'users' => $users, 'children' => $children]);
+        if (!$children || $children->count() === 0) {
+            return redirect()->back()->withErrors('No se encontraron hijos asociados a este usuario');
+        }
+    
+        // Obtener todos los eventos
+        $events = Event::all();
+    
+        return view('forms.create', [
+            'user' => $user,
+            'children' => $children,
+            'events' => $events,
+        ]);
     }
+    
 
     public function storeEventUser(Request $request) {
 
