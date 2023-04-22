@@ -15,15 +15,14 @@ class EventUser extends Model
     protected $fillable = [
         'event_id',
         'user_id',
-        'child_id',
+        'name_children',
+        'surname_children',
+        'birth_date',
+        'school_year',
         'phone_contact',
         'matriculado_centro',
         'directo_comedor',
         'necesidades_especiales',
-        'quantity',
-        'total_priice',
-        'payment_id',
-        'is_paid',
     ];
 
     public function event() {
@@ -34,32 +33,4 @@ class EventUser extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function child() {
-        return $this->belongsTo(Child::class);
-    }
-
-    protected static function boot() {
-
-        parent::boot();
-
-        static::creating(function ($model) {
-            $model->calculateTotalPrice();
-        });
-
-        static::updating(function ($model) {
-            $model->calculateTotalPrice();
-        });
-    }
-
-    public function calculateTotalPrice() {
-
-        $event = Event::findOrFail($this->event_id);
-        $price = $event->price_no_associated;
-
-        if ( Associated::where('user_id', $this->user_id)->exists()) {
-            $price = $event->price_associated;
-        }
-
-        $this->total_price = $this->quantity * $price;
-    }
 }
