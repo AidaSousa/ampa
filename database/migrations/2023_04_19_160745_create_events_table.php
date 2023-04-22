@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->longText('description');
-            $table->dateTime('start_date');
+            $table->string('image');
+            $table->date('start_date');
             $table->float('price_no_asociated');
             $table->float('price_associated');
-            $table->dateTime('end_date');
+            $table->date('end_date');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
 

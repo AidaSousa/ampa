@@ -19,8 +19,8 @@
                     <table class="table table-hover table-bordered" id="tableUsuarios">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Nombre del padre/madre</th>
+                          <th>Imagen</th>
+                          <th>Actividad</th>
                           <th>Descripción</th>
                           <th>Fecha de inicio</th>
                           <th>Precio no asociado</th>
@@ -30,6 +30,27 @@
                           <th>Acciones</th>
                         </tr>
                       </thead>
+                      <tbody>
+                        @foreach ($events as $event)
+                          <tr>
+                            <td><img src="{{$event->image}}" width="50" height="50"/></td>
+                            <td>{{$event->name}}</td>
+                            <td>{{$event->description}}</td>
+                            <td>{{$event->start_date}}</td>
+                            <td>{{$event->price_no_asociated}}€</td>
+                            <td>{{$event->price_associated}}€</td>
+                            <td>{{$event->end_date}}</td>
+                            <td>{{$event->category->name}}</td>
+                            <td>
+                              <form method="POST" action="{{ route('events.destroy', $event->id) }}" style="display:inline">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar esta actividad?')"><i class="fa fa-trash"></i></button>
+                              </form>
+                            </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
                     </table>
                     </div>
                 </div>

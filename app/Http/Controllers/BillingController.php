@@ -66,6 +66,6 @@ class BillingController extends Controller
             }
         
 
-        return view('billings.show', ['subscriptions' => $subscriptions]);
+        return view('billings.show', ['subscriptions' => $subscriptions, 'user' => $user]);
     }
 }

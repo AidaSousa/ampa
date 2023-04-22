@@ -37,7 +37,7 @@ class ChildrenController extends Controller
 
         $children->save();
 
-        return redirect()->route('user.profile')->with('success', 'Children created successfully!!');
+        return redirect()->route('user.perfil')->with('success', 'Children created successfully!!');
     }
 
     public function showChildren($id) {

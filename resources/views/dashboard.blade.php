@@ -58,9 +58,9 @@
         <li><a class="app-menu__item" href="{{ route('categories.index') }}"><i class="app-menu__icon fa fa-archive"></i><span class="app-menu__label">Categorias</span></a></li>
         <li><a class="app-menu__item" href="{{ route('events.index') }}"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span></a></li>
         <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-calendar"></i><span class="app-menu__label">Registro de eventos</span></a></li>
-        <li><a class="app-menu__item" href="{{ route('blogs.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a>
+        <li><a class="app-menu__item" href="{{ route('blog.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a>
         </li>
-        <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Logout</span></a>
+        <li><a class="app-menu__item" href="{{ route('logout')}}"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Logout</span></a>
         </li>
       </ul>
     </aside>

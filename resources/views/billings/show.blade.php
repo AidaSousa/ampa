@@ -29,7 +29,6 @@
                                 <th>Pago</th>
                                 <th>Fecha inicio</th>
                                 <th>Fecha Fin</th>
-                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,9 +56,6 @@
                                         @else
                                             Renovación automatica
                                         @endif
-                                    </td>
-                                    <td>
-                                        
                                     </td>
                                 </tr>
                             @endforeach

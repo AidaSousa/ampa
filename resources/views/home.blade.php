@@ -126,9 +126,9 @@
 		<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ruta mx-auto">
 			<div class="block2">
 				<div class="block2-pic hov-img0 p-0">
-					<img src="img/pequeruta-3.jpg" alt="IMG">
-					<a href="{{ route ('events.show', $event->id) }}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-						<button>INSCRIBETE</button>
+					<img src="{{$event->image}}" alt="IMG">
+					<a href="{{ route ('events.show', $event->id) }}"  class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+						INSCRIBETE
 					</a>
 				</div>
 				<h4 class="mtext-101 cl2 hov-cl1 trans-04">
@@ -162,7 +162,7 @@
             <div class="col-sm-6 col-md-4 p-b-40">
                 <div class="blog-item">
                     <div class="hov-img0">
-                        <a href="{{ route('blogs.show', $blog->id) }}">
+                        <a href="{{ route('blog.show', $blog->id) }}">
                             <img class="w-100 custom-img" src="{{ asset($blog->image_path) }}" alt="Imagen del blog">
                         </a>
                     </div>
@@ -190,7 +190,7 @@
                         </div>
 
                         <h4 class="p-b-12">
-                            <a href="{{ route('blogs.show', $blog->id) }}" class="mtext-101 cl2 hov-cl1 trans-04">
+                            <a href="{{ route('blog.show', $blog->id) }}" class="mtext-101 cl2 hov-cl1 trans-04">
                                 {{ $blog->title }}
                             </a>
                         </h4>
