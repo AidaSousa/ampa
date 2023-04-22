@@ -21,7 +21,7 @@
         </ul>
       </div> -->
       <div class="row">
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6">
           <div class="widget-small primary coloured-icon"><i class="icon fa fa-user fa-2x"></i>
             <div class="info">
               <h4>Asociados</h4>
@@ -29,7 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6">
           <div class="widget-small info coloured-icon"><i class="icon fa fa-archive fa-3x"></i>
             <div class="info">
               <h4>Categorias</h4>
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 width">
           <div class="widget-small warning coloured-icon"><i class="icon fa fa-star fa-3x"></i>
             <div class="info">
               <h4>Actividades</h4>
@@ -45,29 +45,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-6">
           <div class="widget-small danger coloured-icon"><i class="icon fa fa-eur fa-3x"></i>
             <div class="info">
               <h4>Pagos</h4>
               <p><b>637</b></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="tile">
-            <h3 class="tile-title">Pagos Mensuales</h3>
-            <div class="embed-responsive embed-responsive-16by9">
-              <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="tile">
-            <h3 class="tile-title">Asociados</h3>
-            <div class="embed-responsive embed-responsive-16by9">
-              <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
             </div>
           </div>
         </div>
