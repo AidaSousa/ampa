@@ -18,16 +18,24 @@ class EventUserController extends Controller
         return view('events-user.index', ['eventUsers' => $eventUsers]);
     }
 
+    public function showAllEventsUser()
+    {
+        $user_id = auth()->user()->id;
+
+        $eventUsers = EventUser::where('user_id', $user_id);
+
+        return view('events-user.showAll', ['eventUsers' => $eventUsers]);
+    }
+
+
     public function createEventUser() {
 
         // Obtener el usuario autenticado
-        $user = auth()->user();
     
         $events = Event::all();
     
         return view('events-user.create', [
             'events' => $events,
-            'user' => $user
         ]);
     }
     
@@ -49,14 +57,14 @@ class EventUserController extends Controller
         $eventsUser->necesidades_especiales = $request->input('necesidades_especiales');
         $eventsUser->save();
     
-        return redirect()->route('events-user.index')->with('success', 'Event User creado correctamente.');
+        return redirect()->route('user.perfil')->with('success', 'Event User creado correctamente.');
     }
 
     public function showEventUser($id) {
 
-        $eventsUser = EventUser::findOrFail($id);
+        $eventUser = EventUser::findOrFail($id);
 
-        return view('events-user.show', ['eventsUser' => $eventsUser]);
+        return view('events-user.show', ['eventUser' => $eventUser]);
     }
 
     public function destroyEventUser($id) {

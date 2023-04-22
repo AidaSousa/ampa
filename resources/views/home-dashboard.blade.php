@@ -44,6 +44,14 @@
             </div>
           </div>
         </div>
+        <div class="col-md-6 col-lg-6">
+          <div class="widget-small primary coloured-icon"><a href="#"><i class="icon fa fa-book fa-3x"></i></a>
+            <div class="info text-center">
+              <h2><a href="#">Banco de libros</h2></a>
+              <h5><b>637</b></h5>
+            </div>
+          </div>
+        </div>
 
       </div>
 </div>

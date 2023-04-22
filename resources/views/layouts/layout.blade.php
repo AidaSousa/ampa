@@ -98,6 +98,7 @@
                                     <li><a href="{{ route('user.perfil') }}">Mi perfil</a></li>
                                     <li><a href="{{ route('billings.index')}}">Hazte socio</a></li>
                                     <li><a href="{{ route('events-user.create')}}">Formulario actividades</a></li>
+                                    <li><a href="{{ route('libros.create')}}">Formulario banco de libros</a></li>
                                     <li><a href="{{ route('logout') }}">Cerrar sesión</a></li>
                                 </ul>
                             </li>
@@ -175,6 +176,10 @@
 
                 <li>
                     <a href="{{ route('events-user.create') }}">Formulario actividades</a>
+                </li>
+
+                <li>
+                    <a href="{{ route('libros.create') }}">Formulario banco de libros</a>
                 </li>
 
                 <li>
