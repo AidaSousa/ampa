@@ -42,8 +42,8 @@ https://github.com/AidaSousa/ampa.git
 
 ## Desarrolladoras
 
-Arancha Fernández  | Product Owner | https://github.com/AranchaFdz |
-Ana de la Vega | Scrum Master | https://github.com/anavgg |
-Aida Sousa| Developer | https://github.com/AidaSousa |  
-Noelia Rilova  | Developer | https://github.com/nrilova  |
-Georgette Velasco | Developer | https://github.com/georgette949  |
+Arancha Fernández  | Product Owner | https://github.com/AranchaFdz 
+Ana de la Vega | Scrum Master | https://github.com/anavgg 
+Aida Sousa| Developer | https://github.com/AidaSousa  
+Noelia Rilova  | Developer | https://github.com/nrilova  
+Georgette Velasco | Developer | https://github.com/georgette949  
