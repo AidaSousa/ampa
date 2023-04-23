@@ -26,7 +26,7 @@
                                 <th>Telefono</th>
                                 <th>Dirección</th>
                                 <th>Colaboracion Ampa</th>
-                                <th>Pago</th>
+                                <th>Suscripción</th>
                                 <th>Fecha inicio</th>
                                 <th>Fecha Fin</th>
                             </tr>
@@ -44,9 +44,9 @@
                                     <td>{{ $subscription['user_colaboracion_ampa'] }}</td>
                                     <td>
                                         @if ($subscription['user_is_paid'])
-                                            Activo
+                                            Activa
                                         @else
-                                            Inactivo
+                                            Inactiva
                                         @endif
                                     </td>
                                     <td>{{ $subscription['start_date'] }}</td>

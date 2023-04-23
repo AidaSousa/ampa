@@ -10,6 +10,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\StripePaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -88,7 +90,7 @@ Route::get('/actividades', [EventController::class, 'indexEvent'])->name('events
 Route::get('/todas-las-actividades', [EventController::class, 'showAllEvents'])->name('events.events');
 Route::get('/event-create', [EventController::class, 'createEvent'])->name('events.create');
 Route::post('/event-store', [EventController::class, 'storeEvent'])->name('events.store');
-Route::get('/event-show/{id}', [EventController::class, 'showEvent'])->name('events.show');
+Route::get('/event-show/{event}', [EventController::class, 'showEvent'])->name('events.show');
 Route::delete('/event-destroy/{id}', [EventController::class, 'destroyEvent'])->name('events.destroy');
 
 //Libros
@@ -140,7 +142,9 @@ Route::get('/user/invoice/{invoice}', function (Request $request, string $invoic
     return $request->user()->downloadInvoice($invoiceId);
 });
 
+Route::get('/stripe/{event}', [StripePaymentController::class, 'stripe'])->name('stripe');
+Route::post('/stripe/{event}', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
+Route::get('/pagos', [StripePaymentController::class, 'index'])->name('payments.index');
 
-Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
-Route::put('/users/{id}', [UserController::class, 'update'])->name('user.update');
+
 

@@ -70,11 +70,16 @@ class User extends Authenticatable
     ];
 
     protected static function booted(): void
+    {
+        static::updated(queueable(function (User $customer) {
+            if ($customer->hasStripeId()) {
+                $customer->syncStripeCustomerDetails();
+            }
+        }));
+    }
+
+    public function events()
 {
-    static::updated(queueable(function (User $customer) {
-        if ($customer->hasStripeId()) {
-            $customer->syncStripeCustomerDetails();
-        }
-    }));
+    return $this->belongsToMany(Event::class)->withTimestamps();
 }
 }

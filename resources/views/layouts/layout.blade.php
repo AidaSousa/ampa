@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
@@ -73,7 +76,7 @@
                 <nav class="limiter-menu-desktop p-l-45">
                     <!-- Logo desktop -->
                     <a href="{{ url('/') }}" class="logo">
-                        <img src="{{ URL::asset('img/anpa.png') }}" alt="IMG-LOGO">
+                        <img src="{{ URL::asset('img/anpa (6).svg') }}" alt="IMG-LOGO">
                     </a>
 
                     <!-- Menu desktop -->
@@ -87,7 +90,7 @@
 
                             </li>
                             <li>
-                                <a href="{{ route('blog.index') }}">Blog</a>
+                                <a href="{{ route('blog.blogs') }}">Blog</a>
                             </li>
                             @auth
                             <li class="active-menu">
@@ -97,7 +100,6 @@
                                 <ul class="sub-menu">
                                     <li><a href="{{ route('user.perfil') }}">Mi perfil</a></li>
                                     <li><a href="{{ route('billings.index')}}">Hazte socio</a></li>
-                                    <li><a href="{{ route('events-user.create')}}">Formulario actividades</a></li>
                                     <li><a href="{{ route('libros.create')}}">Formulario banco de libros</a></li>
                                     <li><a href="{{ route('logout') }}">Cerrar sesión</a></li>
                                 </ul>
@@ -163,7 +165,7 @@
                     <a href="{{ route('events.events') }}">Actividades</a>
                 </li>
                 <li>
-                    <a href="{{ route('blog.index') }}">Blog</a>
+                    <a href="{{ route('blog.blogs') }}">Blog</a>
                 </li>
                 @auth
                 <li>
@@ -172,10 +174,6 @@
 
                 <li>
                     <a href="{{ route('billings.index') }}">Hazte socio</a>
-                </li>
-
-                <li>
-                    <a href="{{ route('events-user.create') }}">Formulario actividades</a>
                 </li>
 
                 <li>

@@ -57,7 +57,7 @@
                                   </div>
                               </div>
                               <div class="form-group{{ $errors->has('price_no_asociated') ? ' has-error' : '' }}">
-                              <label for="price_no_asociated" class="col-md-4 control-label">Precio de no asociado</label>
+                              <label for="price_no_asociated" class="col-md-4 control-label">Precio</label>
                                   <div class="col-xs-12 col-sm-12 col-md-12">
                                       <input id="price_no_asociated" type="text" class="form-control" name="price_no_asociated" required>
                                       @if ($errors->has('price_no_asociated'))
@@ -67,19 +67,8 @@
                                       @endif
                                   </div>
                               </div>
-                              <div class="form-group{{ $errors->has('price_associated') ? ' has-error' : '' }}">
-                              <label for="price_associated" class="col-md-4 control-label">Precio de asociado</label>
-                                  <div class="col-xs-12 col-sm-12 col-md-12">
-                                      <input id="price_associated" type="text" class="form-control" name="price_associated" required>
-                                      @if ($errors->has('price_associated'))
-                                      <span class="help-block">
-                                          <strong>{{ $errors->first('price_associated') }}</strong>
-                                      </span>
-                                      @endif
-                                  </div>
-                              </div>
                               <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
-                              <label for="end_date" type="date" class="col-md-4 control-label">Fecha de finalización de actividad</label>
+                              <label for="end_date" type="date" class="col-md-4 control-label">Fecha tope de registro</label>
                                   <div class="col-xs-12 col-sm-12 col-md-12">
                                       <input id="end_date" type="date" class="form-control" name="end_date" required>
                                       @if ($errors->has('end_date'))

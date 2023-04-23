@@ -1,5 +1,5 @@
 @if($eventUsers)
-    <table class="table">
+    <table class="table pb-6">
         <thead class="thead-dark">
             <tr>
                 <th>Actividad</th>
