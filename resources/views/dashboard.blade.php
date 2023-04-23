@@ -2,11 +2,9 @@
 <html lang="es">
   <head>
     <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <!-- Twitter meta-->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:site" content="@pratikborsadiya">
     <meta property="twitter:creator" content="@pratikborsadiya">
-    <!-- Open Graph Meta-->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Vali Admin">
     <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
@@ -17,32 +15,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="/css/main.temp.css">
-    <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="app sidebar-mini">
-    <!-- Navbar-->
     <header class="app-header"><a class="app-header__logo" href="index.html">Montevixia</a>
-      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-      <!-- Navbar Right Menu-->
+      <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <ul class="app-nav">
-        <li class="app-search">
-          <input class="app-search__input" type="search" placeholder="Search">
-          <button class="app-search__button"><i class="fa fa-search"></i></button>
-        </li>
-        <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
 
             <li><a class="dropdown-item" href="{{ route('user.perfil') }}"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-            <li><a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            <li><a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Pechar sesión</a></li>
           </ul>
         </li>
       </ul>
     </header>
-    <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       <div class="app-sidebar__user mx-4"><i class="fa fa-user fa-lg fa-3x ml-"> </i>
@@ -52,13 +40,11 @@
         </div>
       </div>
       <ul class="app-menu">
-        <li><a class="app-menu__item active" href="{{ route('dashboard') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-
-        <li><a class="app-menu__item" href="{{ route('billings.show') }}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span></i></a>
-        </li>
-        <li><a class="app-menu__item" href="{{ route('categories.index') }}"><i class="app-menu__icon fa fa-archive"></i><span class="app-menu__label">Categorias</span></a></li>
+        <li><a class="app-menu__item active" href="{{ route('dashboard') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Panel de Control</span></a></li>
+        <li><a class="app-menu__item" href="{{ route('billings.show') }}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span></i></a></li>
+        <li><a class="app-menu__item" href="{{ route('categories.index') }}"><i class="app-menu__icon fa fa-archive"></i><span class="app-menu__label">Categorías</span></a></li>
         <li><a class="app-menu__item" href="{{ route('events.index') }}"><i class="app-menu__icon fa fa-star"></i><span class="app-menu__label">Actividades</span></a></li>
-        <li><a class="app-menu__item" href="{{ route('events-user.index')}}"><i class="app-menu__icon fa fa-calendar"></i><span class="app-menu__label">Registro de eventos</span></a></li>
+        <li><a class="app-menu__item" href="{{ route('events-user.index')}}"><i class="app-menu__icon fa fa-calendar"></i><span class="app-menu__label">Rexistro de eventos</span></a></li>
         <li><a class="app-menu__item" href="{{ route('libros.index') }}"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Banco de libros</span></a></li>
         <li><a class="app-menu__item" href="{{ route('blog.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a></li>
         <li><a class="app-menu__item" href="{{ route('payments.index') }}"><i class="app-menu__icon fa fas fa-eur"></i><span class="app-menu__label">Pagos</span></a></li>
@@ -67,28 +53,16 @@
       </ul>
     </aside>
     <main class="app-content">
-      <!-- <div class="app-title">
-        <div>
-          <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
-        </div>
-        <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-        </ul>
-      </div> -->
       @yield('content')
       <div>
       </div>
     </main>
 
-    <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.temp.js"></script>
-    <!-- The javascript plugin to display page loading on top-->
     <script src="js/plugins/pace.min.js"></script>
-    <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/chart.js"></script>
     <script type="text/javascript">
       var data = {
@@ -137,7 +111,6 @@
       var ctxp = $("#pieChartDemo").get(0).getContext("2d");
       var pieChart = new Chart(ctxp).Pie(pdata);
     </script>
-    <!-- Google analytics script-->
     <script type="text/javascript">
       if(document.location.hostname == 'pratikborsadiya.in') {
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

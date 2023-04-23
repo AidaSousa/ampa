@@ -6,7 +6,7 @@
 
 <div class="app-title">
         <div>
-          <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
+          <h1><i class="fa fa-dashboard"></i> Panel de control</h1>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
         <div class="col-md-6 col-lg-6">
           <div class="widget-small info coloured-icon"><a href="{{ route('categories.index') }}"><i class="icon fa fa-archive fa-3x"></i></a>
             <div class="info text-center">
-              <h2><a href="{{ route('categories.index') }}">Categorias</h2></a>
+              <h2><a href="{{ route('categories.index') }}">Categorías</h2></a>
               <h5><b>5</b></h5>
             </div>
           </div>
