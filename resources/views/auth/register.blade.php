@@ -29,13 +29,13 @@
                     <div class="row">
                     <div class="col-md-6 mt-3">
                         <div class="form-group">
-                        <label for="name" class="control-label">Nombre</label>
+                        <label for="name" class="control-label">Nome</label>
                         <input id="name" class="form-control" type="text" name="name" required autofocus autocomplete="name" />
                         </div>
                     </div>
                     <div class="col-md-6 mt-3">
                         <div class="form-group">
-                        <label for="surname" class="control-label">Apellidos</label>
+                        <label for="surname" class="control-label">Apelidos</label>
                         <input id="surname" class="form-control" type="text" name="surname"  required autofocus autocomplete="surname" />
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                        <label for="dni" class="control-label">DNI</label>
+                        <label for="dni" class="control-label">ID</label>
                         <input id="dni" class="form-control" type="text" name="dni"  required autofocus autocomplete="dni" />
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                        <label for="direccion" class="control-label">Dirección</label>
+                        <label for="direccion" class="control-label">Enderezo</label>
                         <textarea id="direccion" class="form-control" rows="2" name="direccion"  required autofocus autocomplete="direccion" ></textarea>
                         </div>
                     </div>
@@ -87,13 +87,13 @@
                     <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                        <x-label for="password" value="{{ __('Password') }}" class="mx-auto control-label text-center" />
+                        <x-label for="password" value="{{ __('Password') }}" class="mx-auto control-label text-center"/>
                         <x-input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" />
                     </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                        <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" class="col-md-8 mx-5 control-label " />
+                        <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" class="mx-auto control-label text-center"/>
                         <x-input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
                     </div>
                     </div>

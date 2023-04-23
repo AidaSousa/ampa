@@ -108,7 +108,7 @@
 		<div class="container">
         <div class="p-b-66">
             <h3 class="ltext-105 cl5 txt-center respon1">
-                ÚLTIMAS ACTIVIDADES
+                Últimas Actividades
             </h3>
         </div>
 			<div class="p-b-32">
@@ -128,7 +128,7 @@
 				<div class="block2-pic hov-img0 p-0">
 					<img src="{{$event->image}}" alt="IMG">
 					<a href="{{ route ('events.show', $event->id) }}"  class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-						INSCRIBETE
+						Rexistrarse
 					</a>
 				</div>
 				<h4 class="mtext-101 cl2 hov-cl1 trans-04">
@@ -151,7 +151,7 @@
     <div class="container">
         <div class="p-b-66">
             <h3 class="ltext-105 cl5 txt-center respon1">
-                ÚLTIMAS ENTRADAS AL BLOG
+							Últimas entradas ao blog
             </h3>
         </div>
 
@@ -203,12 +203,10 @@
                 </div>
             </div>
             @endforeach
-
         </div>
     </div>
     </div>
     </div>
-
 
 </section>
 

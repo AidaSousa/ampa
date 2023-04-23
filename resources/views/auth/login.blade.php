@@ -21,7 +21,6 @@
             <div class="login-box">
                 <div id="divLoading" >
                     <div>
-                    <!-- <img src="/img/loading.svg" alt="Loading"> -->
                 </div>
             </div>
             <x-validation-errors class="mb-4" />
