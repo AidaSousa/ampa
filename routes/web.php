@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LibrosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,21 +37,6 @@ Route::get('/pequeruta', function () {
     return view('forms.rutaPequeForm');
 });
 
-//Formulario banco libros
-Route::get('/banco-libros', function () {
-    return view('forms.banco-libros');
-});
-
-//Formulario Actividades varias
-Route::get('/actiForm', function () {
-    return view('forms.actividadesForm');
-});
-
-//Formulario banco libros
-Route::get('/bancolibros', function () {
-    return view('forms.banco-libros');
-});
-
 // Vista Aviso legal
 Route::get('/avisoLegal', function () {
     return view('footer.avisoLegal');
@@ -74,9 +60,6 @@ Route::get('/rutas', function () {
     return view('rutas.index');
 })->name('rutas.index');
 
-Route::get('/libros', function () {
-    return view('libros.index');
-})->name('libros.index');
 
 
 Route::get('/logout', function () {
@@ -108,13 +91,20 @@ Route::post('/event-store', [EventController::class, 'storeEvent'])->name('event
 Route::get('/event-show/{id}', [EventController::class, 'showEvent'])->name('events.show');
 Route::delete('/event-destroy/{id}', [EventController::class, 'destroyEvent'])->name('events.destroy');
 
+//Libros
+Route::get('/libros', [LibrosController::class, 'indexLibros'])->name('libros.index');
+Route::get('/formulario-libros', [LibrosController::class, 'createLibros'])->name('libros.create');
+Route::post('/guardar-libros', [LibrosController::class, 'storeLibros'])->name('libros.store');
+Route::get('/mostrar-libro/{id}', [LibrosController::class, 'showLibro'])->name('libros.show');
+Route::delete('/libro-destroy/{id}', [LibrosController::class, 'destroyLibro'])->name('libros.destroy');
+
 
 
 //Event user
 Route::get('/eventUser-index', [EventUserController::class, 'indexEventUser'])->name('events-user.index');
 Route::get('/formularios', [EventUserController::class, 'createEventUser'])->name('events-user.create');
 Route::post('/eventuser', [EventUserController::class, 'store'])->name('events-user.store');
-Route::get('/eventUser-show', [EventUserController::class, 'showEventUser'])->name('events-user.show');
+Route::get('/eventUser-show/{id}', [EventUserController::class, 'showEventUser'])->name('events-user.show');
 Route::delete('/eventUser-destroy/{id}', [EventUserController::class, 'destroyEventUser'])->name('events-user.destroy');
 
 

@@ -21,42 +21,31 @@
                     <li>Rigurosa orde de recepción dos formularios on line</li>
                 </ol>
 
-                <form action="" method="POST">
+                <form action="{{ route('libros.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">Correo *</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <label for="padre_solicita" class="form-label">Nome da nai/pai ou persoa titora que solicita doazón de libros</label>
+                        <input type="text" class="form-control" name="padre_solicita">
                     </div>
                     <div class="mb-3">
-                        <label for="nombre-tutor" class="form-label">Nome da nai/pai ou persoa titora que solicita doazón de libros</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombre-nino" class="form-label">Nome do/a menor/es para os que se solicita libros</label>
-                        <input type="text" class="form-control">
+                        <label for="menor_solicita" class="form-label">Nome do/a menor/es para os que se solicita libros</label>
+                        <input type="text" class="form-control" name="menor_solicita">
                     </div>
                     <div class="mb-3">
                         <label for="curso" class="form-label">Solicito libros para o curso:</label>
-                        <select class="form-select" required>
+                        <select class="form-select" name="curso" required>
                             <option value="">Selecciona un curso</option>
-                            <option value="4 EP">4 EP</option>
-                            <option value="6 EP">6 EP</option>
+                            <option value="4º E.P.">4 EP</option>
+                            <option value="6º E.P.">6 EP</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Teño doado libros ao banco</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="donado" id="donado-si" value="1">
-                            <label class="form-check-label" for="donado-si">
-                                Sí
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="donado" id="donado-no" value="0" checked>
-                            <label class="form-check-label" for="donado-no">
-                                Non
-                            </label>
-                        </div>
+                        <label for="donado_libros" class="form-label">Teño doado libros ao banco:</label>
+                        <select class="form-select" name="donado_libros" required>
+                            <option value="">Selecciona un curso</option>
+                            <option value="si">Si</option>
+                            <option value="no">Non</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">COMPROMISOS:</label>
@@ -78,11 +67,11 @@
 
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox">FORRAR OS LIBROS para preservar a súa conservación. <br>
-                                    <input class="form-check-input" type="checkbox">POÑER O NOME ENRIBA DO FORRO, cun folio e celo (prohibido empregar etiquetas, nin escribir o nome dentro do libro)<br>
-                                    <input class="form-check-input" type="checkbox">SUPERVISAR QUE NON SE ESCRIBA, SUBLIÑE OU DEBUXE NOS LIBROS. (Importante concienciar @s nen@s). <br>
-                                    <input class="form-check-input" type="checkbox">REPOÑER OU PAGAR O/OS LIBRO/OS EN CASO DE DETERIORO GRAVE* OU PERDA. A negativa, suporá a baixa do banco na anualidade seguinte.<br>
-                                    <input class="form-check-input" type="checkbox">DEVOLVER OS LIBROS AO FINAL DO CURSO.<br>
+                                    <input class="form-check-input" type="checkbox" name="tapa_libros" value="1">FORRAR OS LIBROS para preservar a súa conservación. <br>
+                                    <input class="form-check-input" type="checkbox" name="poner_nombre" value="1">POÑER O NOME ENRIBA DO FORRO, cun folio e celo (prohibido empregar etiquetas, nin escribir o nome dentro do libro)<br>
+                                    <input class="form-check-input" type="checkbox" name="no_subrayado" value="1">SUPERVISAR QUE NON SE ESCRIBA, SUBLIÑE OU DEBUXE NOS LIBROS. (Importante concienciar @s nen@s). <br>
+                                    <input class="form-check-input" type="checkbox" name="reemplazar" value="1">REPOÑER OU PAGAR O/OS LIBRO/OS EN CASO DE DETERIORO GRAVE* OU PERDA. A negativa, suporá a baixa do banco na anualidade seguinte.<br>
+                                    <input class="form-check-input" type="checkbox" name="devolver" value="1">DEVOLVER OS LIBROS AO FINAL DO CURSO.<br>
                                     </label>
                                 </div>
                             </div>
@@ -90,8 +79,8 @@
                             <label class="form-label">DECLARACIÓN E CONFORMIDADE</label>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox">Declaro ter lida toda a información sobre o Banco de libros "Entre familias" e a súa normativa, publicada no blogue http://bloganpaes.blogspot.com/ <br>
-                                    <input class="form-check-input" type="checkbox">Estou conforme coas normas de uso do Banco de libros.<br>
+                                    <input class="form-check-input" type="checkbox" name="declaracion_leida" value="1">Declaro ter lida toda a información sobre o Banco de libros "Entre familias" e a súa normativa, publicada no blogue http://bloganpaes.blogspot.com/ <br>
+                                    <input class="form-check-input" type="checkbox" name="conforme" value="1">Estou conforme coas normas de uso do Banco de libros.<br>
 
                                     </label>
                                 </div>
@@ -102,8 +91,6 @@
                             </div>
                         </div>
                 </form>
-
-
             </div>
         </div>
     </div>

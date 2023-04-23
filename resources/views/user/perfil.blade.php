@@ -18,83 +18,19 @@
 									<a  class="btn btn-custom px-4"  style="background-color: #009688; color: white;" href="{{ route('billings.index') }}">Hacerme socio</a>
               					</div>
             				</div>
-            				<hr class="my-4">
+            				<hr class="my-4 mb-7">
+							<h1 class="font-bold text-gray-900 text-center mb-2">Libros Solicitados</h1>
+							@include('libros.showAll')
         				</div>
         			</div>
       			</div>
       			<div class="col-lg-8">
         			<div class="card">
           				<div class="card-body">
-            				<!-- Inicio de formulario de actualización de perfil -->
-            				<form method="POST" action="{{ route('user-profile-information.update') }}">
-								@csrf
-								@method('PUT')
-								<!-- Nombre -->
-								<div class="form-group row">
-									<label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>
-
-									<div class="col-md-6">
-										<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? auth()->user()->name }}" required autocomplete="name" autofocus>
-
-										@error('name')
-											<span class="invalid-feedback" role="alert">
-											<strong>{{ $message }}</strong>
-											</span>
-										@enderror
-                					</div>
-              			</div>
-                        <!-- Correo electrónico -->
-						<div class="form-group row">
-							<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
-
-							<div class="col-md-6">
-								<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? auth()->user()->email }}" required autocomplete="email">
-
-								@error('email')
-									<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-									</span>
-								@enderror
-							</div>
-			  			</div>
-						{{-- Password --}}
-						<div class="form-group row">
-							<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-
-							<div class="col-md-6">
-								<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="" required autocomplete="password">
-
-								@error('password')
-									<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-									</span>
-								@enderror
-							</div>
-			  			</div>
-						{{-- Confirmar Password --}}
-						<div class="form-group row">
-							<label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
-
-							<div class="col-md-6">
-								<input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="" required autocomplete="password_confirmation">
-
-								@error('password_confirmation')
-									<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-									</span>
-								@enderror
-							</div>
-			  			</div>
-					</div>
-			  		<div class="col-sm-3 mx-auto">
-						<div class="col-sm-9 text-secondary">
-							<button type="submit" class="btn btn-custom px-4"  style="background-color: #009688; color: white;">Guardar cambios</button>
-						</div>
-					</div>
-							</form>
 							<br/>
-							<hr>
+							<h1 class="font-bold text-gray-900 text-center mb-2">Actividades registradas</h1>
 							<br/>
+							@include('events-user.showAll')
 				</div>
 			</div>
 		</div>
