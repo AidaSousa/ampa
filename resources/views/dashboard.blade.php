@@ -47,7 +47,8 @@
         <li><a class="app-menu__item" href="{{ route('events-user.index')}}"><i class="app-menu__icon fa fa-calendar"></i><span class="app-menu__label">Rexistro de eventos</span></a></li>
         <li><a class="app-menu__item" href="{{ route('libros.index') }}"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Banco de libros</span></a></li>
         <li><a class="app-menu__item" href="{{ route('blog.index') }}"><i class="app-menu__icon fa fas fa-paperclip"></i><span class="app-menu__label">Blog</span></a></li>
-        <li><a class="app-menu__item" href="{{ route('logout')}}"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Pechar sesión</span></a>
+        <li><a class="app-menu__item" href="{{ route('payments.index') }}"><i class="app-menu__icon fa fas fa-eur"></i><span class="app-menu__label">Pagos</span></a></li>
+        <li><a class="app-menu__item" href="{{ route('logout')}}"><i class="app-menu__icon fa fa-sign-out"></i><span class="app-menu__label">Logout</span></a>
         </li>
       </ul>
     </aside>

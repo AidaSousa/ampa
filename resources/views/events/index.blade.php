@@ -24,7 +24,6 @@
                           <th>Descripción</th>
                           <th>Fecha de inicio</th>
                           <th>Precio no asociado</th>
-                          <th>Precio asociado</th>
                           <th>Fecha finalización</th>
                           <th>Categoria</th>
                           <th>Acciones</th>
@@ -38,7 +37,6 @@
                             <td>{{$event->description}}</td>
                             <td>{{$event->start_date}}</td>
                             <td>{{$event->price_no_asociated}}€</td>
-                            <td>{{$event->price_associated}}€</td>
                             <td>{{$event->end_date}}</td>
                             <td>{{$event->category->name}}</td>
                             <td>

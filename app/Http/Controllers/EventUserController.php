@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class EventUserController extends Controller
 {
+  
+
     public function indexEventUser() {
 
         $eventUsers = EventUser::all();

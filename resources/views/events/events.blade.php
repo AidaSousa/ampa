@@ -3,31 +3,27 @@
 @section('title', 'Actividades')
 
 @section('content')
+<x-container class="py-12">
+        
+    <div class="grid grid-cols-3 gap-6">
 
-    
-<div class="row grid mt-8 mb-8 d-flex justify-content-center">
+        @foreach($events as $event)
 
-            @foreach($events as $event)
+            <div class="bg-white rounded shadow-lg">
+                <div class="h-56 bg-cover bg-center p-4" style="background-image: url({{$event->image}});">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{$event->price_no_asociated}} €</span>
+                </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ruta mx-auto">
-                <div class="block2">
-                    <div class="block2-pic hov-img0 p-0">
-                        <img src="{{$event->image}}" alt="IMG">
-                        <a href="{{ route ('events.show', $event->id) }}"  class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-                            Más información...
-                        </a>
-                    </div>
-                    <h4 class="mtext-101 cl2 hov-cl1 trans-04">
-                        {{ $event->name }}
-                    </h4>
-                    <p class="stext-108 cl6">{{ $event->price_associated }}€ asociados / {{ $event->price_no_asociated }}€ no asociados</p>
+                <div class="px-6 py-4">
+                    <a href="{{ route ('events.show', $event) }}" class="text-gray-900 font-semibold text-xl text-uppercase">
+                        {{$event->name}}
+                    </a>
+
+                    <p>{{Str::limit($event->description, 150 )}}</p>
                 </div>
             </div>
+        @endforeach
+    </div>
 
-            @endforeach
-
-   
-</div>
-
- 
+</x-container>
 @endsection

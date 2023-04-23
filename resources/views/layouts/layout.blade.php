@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/material-design-iconic-font.min.css') }}" />
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
@@ -39,8 +43,9 @@
         <div class="container-menu-desktop trans-03">
             <div class="wrap-menu-desktop">
                 <nav class="limiter-menu-desktop p-l-45">
-                    <a href="{{ url('/') }}" class="logo">
-                        <img src="{{ URL::asset('img/anpa.png') }}" alt="IMG-LOGO">
+                    <!-- Logo desktop -->
+                    <a href="{{ route('dashboard') }}" class="logo">
+                        <img src="{{ URL::asset('img/anpa (6).svg') }}" alt="IMG-LOGO">
                     </a>
                     <div class="menu-desktop">
                         <ul class="main-menu">
@@ -51,7 +56,7 @@
                                 <a href="{{ route('events.events') }}">Actividades</a>
                             </li>
                             <li>
-                                <a href="{{ route('blog.index') }}">Blog</a>
+                                <a href="{{ route('blog.blogs') }}">Blog</a>
                             </li>
                             @auth
                             <li class="active-menu">
@@ -59,11 +64,10 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('user.perfil') }}">O meu perfil</a></li>
-                                    <li><a href="{{ route('billings.index')}}">Facerse socio</a></li>
-                                    <li><a href="{{ route('events-user.create')}}">Formulario de actividades</a></li>
-                                    <li><a href="{{ route('libros.create')}}">Formulario de banco de libros</a></li>
-                                    <li><a href="{{ route('logout') }}">Asinar</a></li>
+                                    <li><a href="{{ route('user.perfil') }}">Mi perfil</a></li>
+                                    <li><a href="{{ route('billings.index')}}">Hazte socio</a></li>
+                                    <li><a href="{{ route('libros.create')}}">Formulario banco de libros</a></li>
+                                    <li><a href="{{ route('logout') }}">Cerrar sesión</a></li>
                                 </ul>
                             </li>
                             @else
@@ -99,7 +103,7 @@
                     <a href="{{ route('events.events') }}">Actividades</a>
                 </li>
                 <li>
-                    <a href="{{ route('blog.index') }}">Blog</a>
+                    <a href="{{ route('blog.blogs') }}">Blog</a>
                 </li>
                 @auth
                 <li>
@@ -108,9 +112,7 @@
                 <li>
                     <a href="{{ route('billings.index') }}">Facerse socio</a>
                 </li>
-                <li>
-                    <a href="{{ route('events-user.create') }}">Formulario de actividades</a>
-                </li>
+
                 <li>
                     <a href="{{ route('libros.create') }}">Formulario de banco de libros</a>
                 </li>

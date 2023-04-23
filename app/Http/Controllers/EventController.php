@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
 {
+
     public function indexEvent() {
 
 
@@ -50,7 +52,6 @@ class EventController extends Controller
         $events->description = $request->post('description');
         $events->start_date = $request->post('start_date');
         $events->price_no_asociated = $request->post('price_no_asociated');
-        $events->price_associated = $request->post('price_associated');
         $events->end_date = $request->post('end_date');
         $events->category_id = $request->post('category_id');
 
@@ -59,12 +60,10 @@ class EventController extends Controller
         return redirect()->route('events.index')->with('success', 'Evento creado correctamente');
     }
 
-    public function showEvent($id) {
-
-        $event = Event::find($id);
-        
-        return view('events.show', ['event' => $event]);
+    public function showEvent(Event $event) {
+        return view('events.show', compact('event'));
     }
+    
 
 
     public function destroyEvent($id) {

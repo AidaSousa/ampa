@@ -5,7 +5,7 @@
 @section('content')
 <div class="app-title">
     <div class="d-flex">
-        <h1><i class="mx-2 fa fa-calendar"></i> Registro de usuarios</h1>
+        <h1><i class="mx-2 fa fa-calendar"></i> Registro de actividades</h1>
     </div>
 </div>
 

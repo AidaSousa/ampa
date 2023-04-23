@@ -28,7 +28,7 @@
         			<div class="card">
           				<div class="card-body">
 							<br/>
-							<h1 class="font-bold text-gray-900 text-center mb-2">Actividades registradas</h1>
+							<h1 class="font-bold text-gray-900 text-center mb-5">Actividades registradas</h1>
 							<br/>
 							@include('events-user.showAll')
 				</div>

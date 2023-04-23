@@ -16,7 +16,6 @@ class Event extends Model
         'image',
         'start_date',
         'price_no_associated',
-        'price_associated',
         'end_date',
         'category_id',
     ];
