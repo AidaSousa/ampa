@@ -13,7 +13,7 @@
         ],
         [
             'name' => 'Blog',
-            'url' => route('blog.index'),
+            'url' => route('blog.blogs'),
             'active' => request()->routeIs('blog.*')
         ],
         ];

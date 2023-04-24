@@ -32,7 +32,7 @@
                       <tbody>
                         @foreach ($events as $event)
                           <tr>
-                            <td><img src="{{$event->image}}" width="50" height="50"/></td>
+                            <td><img src="{{asset($event->image)}}" width="50" height="50"/></td>
                             <td>{{$event->name}}</td>
                             <td>{{$event->description}}</td>
                             <td>{{$event->start_date}}</td>
@@ -55,5 +55,5 @@
               </div>
             </div>
         </div>
-@include('events.create')
+
 @endsection

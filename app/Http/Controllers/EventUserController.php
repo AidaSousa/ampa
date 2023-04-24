@@ -32,7 +32,6 @@ class EventUserController extends Controller
 
     public function createEventUser() {
 
-        // Obtener el usuario autenticado
     
         $events = Event::all();
     

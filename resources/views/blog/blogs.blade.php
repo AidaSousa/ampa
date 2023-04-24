@@ -16,11 +16,11 @@
                     @foreach($blogs as $blog)
                     <div class="p-t-32">
                         <h4 class="p-b-15">
-                            <a href="{{ route('blogs.show', $blog->id) }}" class="ltext-108 cl2 hov-cl1 trans-04">
+                            <a href="{{ route('blog.show', $blog->id) }}" class="ltext-108 cl2 hov-cl1 trans-04">
                                 <h2>{{ $blog->title }}</h2>
                             </a>
                         </h4>
-                        <a href="{{ route('blogs.show', $blog->id) }}" class="hov-img0 how-pos5-parent">
+                        <a href="{{ route('blog.show', $blog->id) }}" class="hov-img0 how-pos5-parent">
                             <img src="{{ asset($blog->image_path) }}" alt="Imagen del blog" class="blog-image">
                         </a>
                         <p class="stext-117 cl6">
@@ -37,7 +37,7 @@
                                     <span class="cl12 m-l-4 m-r-6">|</span>
                                 </span>
                             </span>
-                            <a href="{{ route('blogs.show', $blog->id) }}" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+                            <a href="{{ route('blog.show', $blog->id) }}" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
                                 Seguir leyendo
                             </a>
                         </div>

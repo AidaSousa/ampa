@@ -123,10 +123,10 @@
 
 		@foreach($latest_events as $event)
 
-		<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ruta mx-auto">
+		<div class="col-sm-6 col-md-4 col-lg-3 p-b-30 isotope-item ruta mx-auto mt-5">
 			<div class="block2">
 				<div class="block2-pic hov-img0 p-0">
-					<img src="{{$event->image}}" alt="IMG">
+					<img class="w-60 h-60" src="{{$event->image}}" alt="IMG">
 					<a href="{{ route ('events.show', $event->id) }}"  class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 						Rexistrarse
 					</a>
@@ -149,8 +149,8 @@
 
 <section class="sec-blog bg0 p-t-60 p-b-90">
     <div class="container">
-        <div class="p-b-66">
-            <h3 class="ltext-105 cl5 txt-center respon1">
+        <div class="p-b-66 ">
+            <h3 class="ltext-105 cl5 txt-center respon1 mb-3">
 							Últimas entradas ao blog
             </h3>
         </div>

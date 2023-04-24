@@ -48,7 +48,6 @@
                     <hr class="my-4">
 
                     <p class="text-gray-700 text-sm">{{ $event->description }}</p>
-                    <a href="{{ route('stripe', $event)}}">Apuntarse</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,8 @@
+@extends('dashboard')
+
+@section('content')
 <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ route('events.store') }}">
-        <div class="modal fade text-left" id="ModalCreate" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="text-left">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -100,7 +103,7 @@
                                                             <button type="submit" class="btn btn-primary">
                                                                 Registrar actividad
                                                             </button>
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                            <a href="{{ route('events.index')}}" type="button" class="btn btn-secondary">Volver</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -113,4 +116,4 @@
                     </div>
                 </div>
 </form>
-  
+@endsection

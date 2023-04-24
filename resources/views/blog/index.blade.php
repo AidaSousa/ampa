@@ -30,7 +30,7 @@
                           <tr>
                             <td>{{$blog->title}}</td>
                             <td>{{$blog->content}}</td>
-                            <td><img src="{{$blog->image_path}}"></td>
+                            <td><img width="60" height="60" src="{{asset($blog->image_path)}}"></td>
                             <td>
                               <form method="POST" action="{{ route('blog.destroy', $blog->id) }}" style="display:inline">
                                 {{ csrf_field() }}
@@ -47,5 +47,4 @@
               </div>
             </div>
           </div>
-@include('blog.create')
 @endsection

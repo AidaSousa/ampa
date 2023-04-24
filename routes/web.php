@@ -91,12 +91,6 @@ Route::get('/politicaPriv', function () {
 });
 
 
-//Calendario
-// Route::get('/calendar', function () {
-//     return view('components.calendar');
-// });
-
-//stripe(Aida)
 
 
 
