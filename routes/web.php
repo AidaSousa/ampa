@@ -28,25 +28,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::group(['middleware' => ['auth', AdminMiddleware::class]], function () {
-    
-// });
-
-Route::middleware('auth')->group(function () {
-    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('/perfil', [UserController::class, 'showProfile'])->name('user.perfil');
-    Route::get('/event-show/{event}', [EventController::class, 'showEvent'])->name('events.show');
-    Route::get('/formulario-libros', [LibrosController::class, 'createLibros'])->name('libros.create');
-    Route::post('/guardar-libros', [LibrosController::class, 'storeLibros'])->name('libros.store');
-    Route::get('/formularios', [EventUserController::class, 'createEventUser'])->name('events-user.create');
-    Route::post('/eventuser', [EventUserController::class, 'store'])->name('events-user.store');
-    Route::get('/nuevo-socio', [BillingController::class, 'index'])->middleware('auth')->name('billings.index');
-    Route::get('/usuarios', [BillingController::class, 'showAll'])->middleware('auth')->name('billings.show');
-    Route::get('/user/invoice/{invoice}', function (Request $request, string $invoiceId) {
-        return $request->user()->downloadInvoice($invoiceId);
-    });
-    Route::get('/stripe/{event}', [StripePaymentController::class, 'stripe'])->name('stripe');
-    Route::post('/stripe/{event}', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
+Route::group([
+    'middleware' => 'admin',
+    'prefix' => 'admin',
+    'namespace' => 'admin'
+], function () {
     Route::get('/pagos', [StripePaymentController::class, 'index'])->name('payments.index');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/category-index', [CategoryController::class, 'indexCategory'])->name('categories.index');
@@ -68,6 +54,24 @@ Route::middleware('auth')->group(function () {
     Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
     Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
     
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/perfil', [UserController::class, 'showProfile'])->name('user.perfil');
+    Route::get('/event-show/{event}', [EventController::class, 'showEvent'])->name('events.show');
+    Route::get('/formulario-libros', [LibrosController::class, 'createLibros'])->name('libros.create');
+    Route::post('/guardar-libros', [LibrosController::class, 'storeLibros'])->name('libros.store');
+    Route::get('/formularios', [EventUserController::class, 'createEventUser'])->name('events-user.create');
+    Route::post('/eventuser', [EventUserController::class, 'store'])->name('events-user.store');
+    Route::get('/nuevo-socio', [BillingController::class, 'index'])->middleware('auth')->name('billings.index');
+    Route::get('/usuarios', [BillingController::class, 'showAll'])->middleware('auth')->name('billings.show');
+    Route::get('/user/invoice/{invoice}', function (Request $request, string $invoiceId) {
+        return $request->user()->downloadInvoice($invoiceId);
+    });
+    Route::get('/stripe/{event}', [StripePaymentController::class, 'stripe'])->name('stripe');
+    Route::post('/stripe/{event}', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
+
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

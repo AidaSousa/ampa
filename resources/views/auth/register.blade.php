@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                        <label for="dni" class="control-label">ID</label>
+                        <label for="dni" class="control-label">DNI</label>
                         <input id="dni" class="form-control" type="text" name="dni"  required autofocus autocomplete="dni" />
                         </div>
                     </div>
