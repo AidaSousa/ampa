@@ -17,7 +17,7 @@
                     </h4>
                     <div class="bor8 m-b-20 how-pos4-parent">
                         <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="tu correo electronico">
-                        <img class="how-pos4 pointer-none" src="icon/icon-email.png" alt="ICON">
+                        <!-- <img class="how-pos4 pointer-none" src="icon/icon-email.png" alt="ICON"> -->
                     </div>
 
                     <div class="bor8 m-b-30">
