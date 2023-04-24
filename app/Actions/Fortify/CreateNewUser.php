@@ -20,6 +20,7 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input): User
     {
         Validator::make($input, [
+            'is_admin' => ['nullable', 'boolean'],
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -34,6 +35,7 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         $user = User::create([
+            'is_admin' => $input['is_admin'] ?? false,
             'name' => $input['name'],
             'surname' => $input['surname'],
             'email' => $input['email'],
