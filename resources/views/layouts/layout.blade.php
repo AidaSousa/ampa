@@ -135,6 +135,7 @@
 @yield('content')
 
 <footer class="bg3 p-t-75 p-b-32">
+<div class="container">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-lg-3 p-b-50">
@@ -147,6 +148,34 @@
                     <li class="p-b-10">
                         <a href="/avisoLegal" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
                             Aviso legal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <ul text-justify>
+                    <li class="p-b-10">
+                        <a href="/contacto" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
+                            CONTACTO
+                        </a>
+                    </li>
+                    <li class="p-b-10">
+                        <a href="/contacto" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
+                            Tlfn.:604 049 984
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="/contacto" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
+                            e-mail: anpaesanjurjo@gmail.com
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="/contacto" class="stext-107 cl7 hov-cl1 trans-04 text-decoration-none">
+                            Praza San Jose, s/n
+                            15002, A Coruña
                         </a>
                     </li>
                 </ul>
